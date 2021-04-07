@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset=utf-8>
+<!--  
+    Easter Bunny Tracker (track.easterbunny.cc) v5.4.0
+    Copyright (C) 2021  track.easterbunny.cc 
+
+    track.easterbunny.cc is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    track.easterbunny.cc is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with track.easterbunny.cc.  If not, see <https://www.gnu.org/licenses/>. 
+-->
+
+<!--
+    Source code is available at https://gitlab.com/track-easterbunny-cc/tebcc
+    License is available at https://track.easterbunny.cc/license
+-->
+
+<!-- Canonical link - Should be set to track.easterbunny.cc for the countdown/pre-tracking/index, otherwise just the url -->
+<head>
+<link rel="canonical" href="https://track.easterbunny.cc/knownissues/" />
+<meta name="description" content="Known Issues for the Easter Bunny Tracker available at track.easterbunny.cc.">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Known Issues - Easter Bunny Tracker">
+<meta property="og:locale" content="en-US">
+<meta property="og:site_name" content="track.easterbunny.cc">
+<meta property="og:url" content="https://track.easterbunny.cc/knownissues/">
+<meta property="og:description" content="Known Issues for the Easter Bunny Tracker available at track.easterbunny.cc.">
+<meta property="og:image" content="https://track.easterbunny.cc/assets/icons/android-icon-384x384.png">
+<meta property="og:image:secure_url" content="https://track.easterbunny.cc/assets/icons/android-icon-384x384.png">
+<meta property="og:image:alt" content="Icon of an Easter Bunny standing up straight">
+<meta property="og:image:width" content="384">
+<meta property="og:image:height" content="384">
+<meta name="twitter:image" content="https://track.easterbunny.cc/assets/icons/android-icon-384x384.png">
+<meta name="twitter:image:alt" content="Icon of an Easter Bunny standing up straight">
+<meta name="twitter:creator" content="@bunny_tracking">
+<meta name="twitter:title" content="Known Issues - Easter Bunny Tracker">
+<meta name="twitter:description" content="Known Issues for the Easter Bunny Tracker available at track.easterbunny.cc.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:url" content="https://track.easterbunny.cc/knownissues/">
+
+<link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/manifests/manifest.json">
+<link rel="shortcut icon" href="/assets/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="msapplication-TileImage" content="/assets/icons/mstile-144x144.png">
+<meta name="msapplication-config" content="/assets/manifests/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" crossorigin="anonymous">
+<link rel="stylesheet" href="/assets/stylesheets/light.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/assets/stylesheets/dark.css" crossorigin="anonymous" disabled>
+<link rel="stylesheet" href="/assets/stylesheets/plead.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/assets/stylesheets/linkwrapper.css" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bowser/1.9.4/bowser.min.js" integrity="sha384-2wrSrTEHqvdtiVAZygJZuYUeKryvoEf1n4xaniOxF7VWWtiZOMGiVx6hTop4W7Nz" crossorigin="anonymous"></script>
+<script src="/assets/js/appswitch.js"></script>
+<script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+
+<title>Known Issues - Easter Bunny Tracker 2021</title>
+</head>
+
+<style>
+  body {
+    font-family: 'Roboto'
+  }
+
+  .top-card {
+    touch-action: manipulation;
+  }
+
+  .material-icons {
+    font-feature-settings: "liga"
+  }
+</style>
+
+<script>
+  var ls_avail = true;
+  var appearance = "automatic";
+  var mapmode = "street";
+  var bunnybounce = "off";
+  var weathersummary = "off";
+  var ebarrival = "on";
+  var pcs_raw_avail = false;
+  var old_browser = false;
+  try {
+    var pcs_raw = window.matchMedia('(prefers-color-scheme: dark)')
+    pcs_raw_avail = true;
+  } catch (e) {
+    // empty
+  }
+  
+  
+  try {
+    localStorage.setItem("ls-test", "ls-test")
+    localStorage.removeItem("ls-test")
+  } catch (e) {
+    ls_avail = false;
+  }
+  
+  // Ensure that local settings are init'd, otherwise select proper buttons for settings.
+  // Also don't do the initting if the ls is unavail
+  if (ls_avail == true) {
+    try {
+      if (localStorage.getItem("appearance") == null) {
+        localStorage.setItem("appearance", "automatic")
+      }
+    
+      if (localStorage.getItem("mapmode") == null) {
+        localStorage.setItem("mapmode", "street")
+      }
+    
+      if (localStorage.getItem("bunnybounce") == null) {
+        localStorage.setItem("bunnybounce", "off")
+      }
+    
+      if (localStorage.getItem("weathersummary") == null) {
+        localStorage.setItem("weathersummary", "off")
+      }
+    
+      if (localStorage.getItem("ebarrival") == null) {
+        localStorage.setItem("ebarrival", "on")
+      }
+    
+      // Load in LS settings, only changing them if they regex match to pre-selected options
+      if ((localStorage.getItem("appearance")).match("^automatic$|^light$|^dark$")) {
+        appearance = localStorage.getItem("appearance")
+      }
+
+      if ((localStorage.getItem("mapmode")).match("^street$|^satellite$|^hybrid$")) {
+        mapmode = localStorage.getItem("mapmode")
+      }
+
+      if ((localStorage.getItem("bunnybounce")).match("^off$|^on$")) {
+        bunnybounce = localStorage.getItem("bunnybounce")
+      }
+
+      if ((localStorage.getItem("weathersummary")).match("^off$|^on$")) {
+        weathersummary = localStorage.getItem("weathersummary")
+      }
+
+      if ((localStorage.getItem("ebarrival")).match("^off$|^on$")) {
+        ebarrival = localStorage.getItem("ebarrival")
+      }
+    } catch (e) {
+      // empty
+    }
+  }
+  
+  $(function () {
+    try {
+      if (appearance == "dark" || ((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) && appearance == "automatic")) {
+        $('link[rel="stylesheet"][href="/assets/stylesheets/light.css"]').prop('disabled', true);
+        $('link[rel="stylesheet"][href="/assets/stylesheets/dark.css"]').prop('disabled', false);
+      } else if (appearance == "light" || (!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) && appearance == "automatic")) {
+        // empty
+      }
+    } catch (e) {
+      // empty
+    }
+
+    $("#switcherbutton").show();
+    // eslint-disable-next-line no-undef
+    initButton(appearance);
+    // eslint-disable-next-line no-undef
+    initLink()
+
+    $(".btn").focus(function() {
+      this.blur();
+    })
+
+    $(".btn").focusin(function() {
+      this.blur();
+    })
+
+    $(".btn").focusout(function() {
+      this.blur();
+    })
+  })
+  
+  if (pcs_raw_avail) {
+    pcs_raw.addListener(function() {
+      if (((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) && appearance == "automatic")) {
+        $('link[rel="stylesheet"][href="/assets/stylesheets/light.css"]').prop('disabled', true);
+        $('link[rel="stylesheet"][href="/assets/stylesheets/dark.css"]').prop('disabled', false);
+      } else if ((!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) && appearance == "automatic")) {
+        $('link[rel="stylesheet"][href="/assets/stylesheets/light.css"]').prop('disabled', false);
+        $('link[rel="stylesheet"][href="/assets/stylesheets/dark.css"]').prop('disabled', true);
+      }
+    })
+  }
+
+// eslint-disable-next-line no-undef
+document.addEventListener("visibilitychange", vischange_button)
+// eslint-disable-next-line no-undef
+document.addEventListener("focus", vischange_button)
+window.onpageshow = function(event) {
+  if (event.persisted) {
+    // eslint-disable-next-line no-undef
+    vischange_button()
+  }
+}
+</script>
+
+<body class="top-card" id="mainbody">
+  <div class="preload" style="opacity: 0; width: 0px; height: 0px;">
+    <i class="material-icons">brightness_auto</i>
+    <i class="material-icons">brightness_4</i>
+    <i class="material-icons">brightness_5</i>
+  </div>
+<div class="container">
+  <div class="row">
+    <div class="col" style="padding: 2em">
+      <button type="button" id="switcherbutton" class="btn top-card" onclick="styleSwitch()" style="float: right; display: none"><i id="appearance_button" class="material-icons" style="line-height: unset"></i></button>
+      <p class="lead">Easter Bunny Tracker - Known Issues</p>
+      <p>Last updated: January 4, 2021</p>
+      <hr class="styledhr">
+      <p>
+        Due to limitations in the browser technologies we use, track.easterbunny.cc has some known issues that affect parts of tracker operation. Unfortunately, we can't fix these issues due to a variety of reasons. Before reporting a tracker bug, make sure the bug you're experiencing isn't a known issue.
+        <hr class="styledhr">
+        <b>Tracker - Map flashes in early hours of tracking</b><br>
+        <b>Affects: </b>All devices <br>
+        <b>Cause: </b>Google Maps rendering issues when crossing the 180 degree longitude line<br><br>
+        We're aware of an issue where the map will flash when the Easter Bunny crosses the 180 degree longitude line. There is no fix on our end that we know of, as this more than likely requires changes to the Google Maps API.<br><br>
+        The map flashes occur within the first hour of tracking, and don't occur after that.
+        <hr class="styledhr">
+        <b>Tracker - Zooming into and out of the tracker page causes a glitched Easter Bunny icon</b><br>
+        <b>Affects: </b>Most devices, notably on desktop browsers <br>
+        <b>Cause: </b>Google Maps rendering issues<br><br>
+        When zooming in and out of the page, the Easter Bunny icon may get distorted, which requires a refresh of the tracker to fix. We recommend that you find the zoom level you like, then refresh the page so that the icon is not distorted. <br><br>
+        We've seen some browsers that don't encounter this issue, and but most browsers do experience this issue. Firefox Desktop seems to be affected the most, with Chrome Desktop also being affected.
+        <hr class="styledhr">
+        <b>Tracker - Firefox on Android sometimes shows a blank space at the bottom of the tracker window</b><br>
+        <b>Affects: </b>Firefox for Android after the redesign <br>
+        <b>Cause: </b>Investigating <br><br>
+        We're aware of an issue in Firefox for Android that causes a blank space at the bottom fo the tracker window. We're continuing to investigate this issue.
+        <hr class="styledhr">
+        <b>Tracker - Easter Bunny icon gets more jittery into the later hours of tracking</b><br>
+        <b>Affects: </b>Timelapse recordings of the tracker <br>
+        <b>Cause: </b>Slowing down of the tracker in the later hours<br><br>
+        This issue likely comes down to how the Easter Bunny starts to slow down on his journey towards the later hours of tracking. This then causes jittering in timelapses.
+        <hr class="styledhr">
+        <b>Tracker - South Korea on the map is blurry, not filled in, and/or has a different color to surrounding areas</b><br>
+        <b>Affects: </b>All devices <br>
+        <b>Cause: </b>South Korean map laws<br><br>
+        This is a known issue in regards to South Korean map laws. Google has to render map tiles with road & terrain data on servers in South Korea, so they don't look the same compared to the surrounding map tiles. This should only affect a portion of tracking, and when zoomed out enough, South Korea will blend in to the rest of the map.
+        <hr class="styledhr">
+        <b>Tracker - Safari on iOS 12 or earlier glitch in horizontal mode</b><br>
+        <b>Affects:</b> iPhone 5, 5S, SE, iPod touch 5G, iPod touch 6G running iOS 12.5 or earlier <br>
+        <b>Cause:</b> Safari behavior prevents the page from going into horizontal mode without the address bar properly <br><br>
+        This issue occurs when trying to enter horizontal mode, and the address bar pops up, meaning the page has to scroll. We're not aware of any fixes at this time. You can properly enter horizontal mode by scrolling down from the next stop box a few times (nothing will happen on the page), then rotating your device to horizontal.
+        <hr class="styledhr">
+        <b>News - Safari on iOS 12 or earlier allows scrolling under the share this article modal in News</b><br>
+        <b>Affects:</b> Safari on iOS 12.5 or earlier, potentially including Chrome, Firefox, and other browsers.<br>
+        <b>Cause:</b> Limitations with the WebKit engine powering Safari (and other browsers on iOS)<br><br>
+        This issue was noted in QA. There is a known way to resolve the issue, but it requires a lot of JavaScript & CSS that could affect the stability of the news page.
+        <hr class="styledhr">
+        <b>Tracker - Devices running iOS 7 - 9 or lower must use two fingers to move the map</b><br>
+        <b>Affects:</b> All devices running iOS 7 - 9<br>
+        <b>Cause:</b> Underlying Google Maps API<br><br>
+        This is an issue with the Google Maps API. You must use two fingers to move the map when it is uncentered. This information is visible in the about window of the tracker when a device running iOS 7 - 9 is detected.
+        <hr class="styledhr">
+        <b>(Mostly fixed in v5!) Tracker - Gray/white squares visible on the map</b><br>
+        <b>Affects:</b> All devices running the tracker at page zooms above 100%<br>
+        <b>Cause:</b> Underlying Google Maps API<br><br>
+        (Update: You can now fix this issue with the Fix gray lines on map setting in v5 of TEBCC!) <br><br>
+        This is an issue with the Google Maps API that is well known. There is no true solution for this issue unfortunately that we know of. The solution we implemented reduces the visiblity of the gray lines, but at the cost of slight map distortion.
+        <hr class="styledhr">
+        <b>Tracker - Uncenter/recenter Easter Bunny button stays depressed after clicking</b><br>
+        <b>Affects:</b> All devices<br>
+        <b>Cause:</b> Button behavior in Bootstrap<br><br>
+        This issue is cosmetic, as the button will have a slightly different color even after depressing it. This can be cleared by clicking on the Next Stop box on the tracker to reset the focus, if this does occur.
+        <hr class="styledhr">
+        <b>Tracker - Inconsistent scrolling behavior in modals</b><br>
+        <b>Affects:</b> Mainly older devices (iOS 10 and lower, Android 6 and lower)<br>
+        <b>Cause:</b> Unknown<br><br>
+        We've noted that sometimes on older devices that scrolling is inconsistent, and potentially gittery. We cannot pin down exactly why this issue occurs, but we are aware of the issue.
+        <hr class="styledhr">
+        <b>Tracker - iOS 7-9 load times can be in excess of 30 seconds</b><br>
+        <b>Affects:</b> Devices running iOS 7 - 9<br>
+        <b>Cause:</b> Underlying Google Maps API & Positioning Data<br><br>
+        We've identified that devices on iOS 9, especially ones that have an A5 or weaker chipset take a while to load the tracker. This is a twofold reason, with the underlying Google Maps API taking a while to execute the JavaScript on page load, and the positioning data also taking some time to load as well.
+        <hr class="styledhr">
+        <b>Tracker - Info/Settings Buttons don't render correctly on iOS 9 and lower</b><br>
+        <b>Affects:</b> Devices running iOS 9 and lower<br>
+        <b>Cause:</b> Browser engine not being able to correctly render CSS<br><br>
+        We've identified that any device running Safari 9 and lower (iOS 9 and lower) that is compatible with the tracker won't be able to render the info/settings buttons correctly on the tracker, leaving margin only on the top half of the button. There is no solution that we are aware of, and rather an issue with the browser rendering engine itself.
+        <hr class="styledhr">
+        <b>News - Share this Article modal glitches upon touching the link field on iOS 9</b><br>
+        <b>Affects:</b> Devices running iOS 9, and we believe iOS 7 & 8 are also affected<br>
+        <b>Cause:</b> Browser engine not being able to correctly render the modal<br><br>
+        We've identified that tapping on the Share this Article modal on iOS 9 will scroll the page to the middle with the modal, and allow scrolling on the entire page. We are not entirely sure of why this occurs, but we suspect it's an issue with how the browser engine is rendering the modal.
+        <hr class="styledhr">
+        <b>Tracker - Firefox on macOS may not response to auto dark mode changes</b><br>
+        <b>Affects: </b>Firefox on macOS 10.14 Mojave and newer <br>
+        <b>Cause: </b>Underlying issue with Firefox <br><br>
+        We identified this issue during quality assurance on macOS 10.15.3 Catalina. This seems to happen when the system appearance is changed while Firefox is still open. Fixing this issue requires Firefox to be quit all the way (no dot under the Firefox icon), before being opened again. <br><br>
+        There is nothing we can do from our end, as the tracker can only rely on the faulty reading from Firefox about the system appearance.
+        <hr class="styledhr">
+        <b>Tracker - Some browsers will not render the top boxes of the tracker</b><br>
+        <b>Affects: </b>Older browsers. An iPad 2 on iOS 9.3.5, and Internet Explorer 11 intermittenly exhibited this issue. <br>
+        <b>Cause: </b>Unknown <br><br>
+        This is a known issue with browsers sometimes not rendering the top boxes of the tracker, leaving just the map. If you do end up experiencing this issue, refreshing the page should bring back the top boxes.
+        <hr class="styledhr">
+        <b>Tracker - Older browsers incorrectly render button size</b><br>
+        <b>Affects: </b>Safari 9 and lower, Chrome ~42 and lower<br>
+        <b>Cause: </b>Older browsers not rendering the button spacing correctly <br><br>
+        This is a known issue that is purely cosmetic. The button size isn't rendered correctly, and especially on the tracker don't look exactly correct. This is an issue with older browsers not being able to render the buttons correctly. <br><br>
+        We've tried many fixes, but unfortunately to no avail.
+        <hr class="styledhr">
+        <b>Tracker - Older browsers can crash when entering settings</b><br>
+        <b>Affects: </b>Chrome Desktop ~40 and lower, and potentially other older browsers<br>
+        <b>Cause: </b>Unknown<br><br>
+        We're noted that Chrome Desktop v42 on macOS Catalina 10.15.3 crashed when entering the settings window. Some code fixes have been applied that should help the issue.
+        <hr class="styledhr">
+        <b>Everything but Tracker - Older browsers may not support manual dark mode</b><br>
+        <b>Affects: </b>Safari 5 and lower, with older browsers likely having this issue <br>
+        <b>Cause: </b>Older browsers being old <br><br>
+        Now, you may be asking, since when were we doing quality assurance in the stone age? Safari iOS 5 on an iPad 1 (yes, the original iPad) doesn't go into dark mode manually. It's tinted a slight bit.
+        <hr class="styledhr">
+        <b>Everything but Tracker - Older browsers may not render icons correctly</b><br>
+        <b>Affects: </b>Older browsers (2010-2011 or older), confirmed on Windows Phone 7.8<br>
+        <b>Cause: </b>Browsers being old<br><br>
+        The button will still work, but the icon won't render correctly, usually with a rectangle box or text in place of the icon. There is no solution to this issue that we know of at the moment.
+      </p>
+      <hr class="styledhr">
+      <a href="https://twitter.com/bunny_tracking" target="_blank" rel="noopener">Follow us on Twitter (@bunny_tracking)</a>
+      <hr class="styledhr">
+      <a href="https://twitter.com/bunny_updates" target="_blank" rel="noopener">Follow the Easter Bunny's journey on Twitter (@bunny_updates)</a>
+      <hr class="styledhr">
+      <a href="/faq">Return to the FAQs</a>
+      <hr class="styledhr">
+      <a style="padding-bottom: 40px" id="bottom-href" href="/">Return to the tracker</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>

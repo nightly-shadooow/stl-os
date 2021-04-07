@@ -1,0 +1,4163 @@
+<meta charset=utf-8>
+<!DOCTYPE html>
+<html lang="en">
+<!--  
+    Easter Bunny Tracker 2021 (track.easterbunny.cc) v5.4.0
+    Copyright (C) 2021  track.easterbunny.cc 
+
+    track.easterbunny.cc is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    track.easterbunny.cc is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with track.easterbunny.cc.  If not, see <https://www.gnu.org/licenses/>. 
+-->
+
+<!--
+    Source code is available at https://gitlab.com/track-easterbunny-cc/tebcc
+    License is available at https://track.easterbunny.cc/license
+-->
+
+<!-- This product includes GeoLite2 data created by MaxMind, available from
+      https://maxmind.com. -->
+
+<head>
+<!-- Canonical link - Should be set to track.easterbunny.cc for the countdown/pre-tracking/index, otherwise just the url -->
+<link rel="canonical" href="https://santatracker.live" />
+<title>SantaTracker.Live</title>
+<meta name="description" content="Track Santa this year in style with SantaTracker.Live!">
+<meta name="robots" content="index,follow">
+<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SantaTracker.Live">
+<meta property="og:locale" content="en-US">
+<meta property="og:site_name" content="Easter Bunny Tracker 2021">
+<meta property="og:url" content="https://santatracker.live">
+<meta property="og:description" content="Track">
+<meta property="og:image" content="https://track.easterbunny.cc/assets/icons/android-icon-384x384.png">
+<meta property="og:image:secure_url" content="https://track.easterbunny.cc/assets/icons/android-icon-384x384.png">
+<meta property="og:image:alt" content="Icon of an Easter Bunny standing up straight">
+<meta property="og:image:width" content="384">
+<meta property="og:image:height" content="384">
+<meta name="twitter:image" content="https://track.easterbunny.cc/assets/icons/android-icon-384x384.png">
+<meta name="twitter:image:alt" content="Icon of an Easter Bunny standing up straight">
+<meta name="twitter:creator" content="@bunny_tracking">
+<meta name="twitter:title" content="Easter Bunny Tracker 2021">
+<meta name="twitter:description" content="Track the Easter Bunny with live updates on a moving map with our Easter Bunny Tracker as he delivers baskets and eggs to homes around the world!">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:url" content="https://santatracker.live">
+
+<link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/manifests/manifest.json">
+<link rel="shortcut icon" href="/assets/icons/favicon.ico">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="msapplication-TileImage" content="/assets/icons/mstile-144x144.png">
+<meta name="msapplication-config" content="/assets/manifests/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+
+<!-- Normal headers for non-TEBCC CDN. Moment is out of date (v2.24 -> v2.26) -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/css/flag-icon.min.css" integrity="sha384-1ita5iSqUFNt65rTf1HQtLX1EGvfzmV1yfXOGT6olE3LPb9uJ+SG4PW4ZgLG4rep" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css" integrity="sha384-z7urxOoxW8XTxSu9GHfjF2IMOLNAJ5YBGVEiX0qaKfOzOhfH/HceecZevk7aFifJ" crossorigin="anonymous">
+<link rel="stylesheet" href="/assets/stylesheets/light.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/assets/stylesheets/dark.css" crossorigin="anonymous" disabled>
+<link rel="stylesheet" href="/assets/stylesheets/chromemap-normal.css" crossorigin="anonymous" disabled>
+<link rel="stylesheet" href="/assets/stylesheets/chromemap-fix.css" crossorigin="anonymous" disabled>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment-with-locales.min.js" integrity="sha256-wdiCkHJlqyoIJxG49WbDO0D3/EnppQp6GVOGQA6PBkA=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.31/moment-timezone-with-data.min.js" integrity="sha512-HZcf3uHWA+Y2P5KNv+F/xa87/flKVP92kUTe/KXjU8URPshczF1Dx+cL5bw0VBGhmqWAK0UbhcqxBbyiNtAnWQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bowser/1.9.4/bowser.min.js" integrity="sha384-2wrSrTEHqvdtiVAZygJZuYUeKryvoEf1n4xaniOxF7VWWtiZOMGiVx6hTop4W7Nz" crossorigin="anonymous"></script>
+
+<!-- For your privacy, we have set up our own CDN on top of Cloudflare. -->
+<!-- <link rel="stylesheet" href="https://cdn.easterbunny.cc/css/materialicons/icon.css" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.easterbunny.cc/css/roboto/roboto.css" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.easterbunny.cc/css/bootstrap-material-design/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.easterbunny.cc/css/flag-icon/flag-icon.min.css" integrity="sha384-1ita5iSqUFNt65rTf1HQtLX1EGvfzmV1yfXOGT6olE3LPb9uJ+SG4PW4ZgLG4rep" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.easterbunny.cc/css/weather-icons/weather-icons.min.css" integrity="sha384-z7urxOoxW8XTxSu9GHfjF2IMOLNAJ5YBGVEiX0qaKfOzOhfH/HceecZevk7aFifJ" crossorigin="anonymous">
+<link rel="stylesheet" href="/assets/stylesheets/light.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/assets/stylesheets/dark.css" crossorigin="anonymous" disabled>
+<script src="https://cdn.easterbunny.cc/js/jquery-341/jquery-3.4.1.min.js" integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" crossorigin="anonymous"></script>
+<script src="https://cdn.easterbunny.cc/js/popperjs/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.easterbunny.cc/js/bootstrap-material-design/bootstrap-material-design.min.js" integrity="sha384-MWDoz065J4IWhBwXrvwmtfO81IMWVUNEBVp7nrd3+eBwkXEcBKccqKZ3gu0mLNum" crossorigin="anonymous"></script>
+<script src="https://cdn.easterbunny.cc/js/momentjs/moment.min.js" integrity="sha384-BiN1bGszLSTO87+pMGYkZWJ3YRpAJ5lOu17mR/6SNsWXav5I5aw/HdrFeC1szmo6" crossorigin="anonymous"></script>
+<script src="https://cdn.easterbunny.cc/js/moment-timezone/moment-timezone-with-data.min.js" integrity="sha384-Loph4nwsH0lG7kxNGFRBVegJ08W9ZcYnFiKtnPA9ia7+kDiEkMLdz/i6dDvXG4/8" crossorigin="anonymous"></script>
+<script src="https://cdn.easterbunny.cc/js/bowser/bowser.min.js" integrity="sha384-2wrSrTEHqvdtiVAZygJZuYUeKryvoEf1n4xaniOxF7VWWtiZOMGiVx6hTop4W7Nz" crossorigin="anonymous"></script> -->
+<script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+</head>
+<noscript>
+  <META HTTP-EQUIV="Refresh" CONTENT="0;URL=/incompatiblebrowser/">
+</noscript>
+
+<style>
+  #map {
+    position: fixed !important;
+    height: 100% !important;
+    width: 100% !important;
+    z-index: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  /* Preload images */
+  body::after{
+    position: absolute; 
+    width: 0; 
+    height: 0; 
+    overflow: hidden; 
+    z-index: -9999;
+    content: url("/assets/icons/bunnycenter-dark.png")  
+              url("/assets/icons/bunnyuncenter-dark.png") 
+              url("/assets/icons/bunnycenter-light.png") 
+              url("/assets/icons/bunnyuncenter-light.png");
+  }
+
+  @media (max-height: 550px) {
+    .ebarrival_mobilewarning {
+      display: block;
+      line-height: 1.75
+    }
+  } 
+
+  @media (min-height: 551px) {
+    .ebarrival_mobilewarning {
+      display: none
+    }
+  }
+
+  .card {
+    font-size: .925rem;
+  }
+
+  .overlay {
+    position: relative;
+    z-index: 2;
+  }
+
+  .flag-icon-iss {
+    background-image: url("/assets/icons/iss.svg")
+  }
+
+  .gmnoprint {
+    touch-action: manipulation;
+  }
+
+  /* https://stackoverflow.com/a/4407335 */
+  .noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+
+  /* https://stackoverflow.com/a/5241448 */
+  .linkwrap {
+    white-space: pre-wrap;  
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;  
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .popover-header {
+    font-family: 'Roboto';
+  }
+
+  .popover-body {
+    font-family: 'Roboto';
+  }
+
+  .center-icon {
+    background-image : url("/assets/icons/bunnycenter-dark.png");
+    background-size: cover;
+    display: inline-block;
+    position: relative;
+    height: 24px;
+    width: 24px;
+  }
+
+  .center-icon-dyn {
+    background-image : url("/assets/icons/bunnycenter-dark.png");
+    background-size: cover;
+    display: inline-block;
+    position: relative;
+    height: 24px;
+    width: 24px;
+  }
+
+  .basket-icon-small {
+    background-image: url("/assets/icons/basket2.png");
+    background-size: cover;
+    display: inline-block;
+    position: relative;
+    height: 18px;
+    width: 18px;
+    bottom: -0.2rem;
+  }
+
+  .carrot-icon-dark {
+    background-image: url("/assets/icons/carrot-128x128-black.png");
+    background-size: cover;
+    display: inline-block;
+    position: relative;
+    height: 24px;
+    width: 24px;
+  }
+
+  .carrot-icon-light {
+    background-image: url("/assets/icons/carrot-128x128-white.png");
+    background-size: cover;
+    display: inline-block;
+    position: relative;
+    height: 24px;
+    width: 24px;
+  }
+
+  .basket-icon-dark {
+    background-image: url("/assets/icons/basket-128x128-black-2.png");
+    background-size: cover;
+    display: inline-block;
+    position: relative;
+    height: 24px;
+    width: 24px;
+  }
+
+  .basket-icon-light {
+    background-image: url("/assets/icons/basket-128x128-white-2.png");
+    background-size: cover;
+    display: inline-block;
+    position: relative;
+    height: 24px;
+    width: 24px;
+  }
+
+  .bunny-icon-small {
+    background-image: url("/assets/icons/bunny2.png");
+    background-size: cover;
+    display: inline-block;
+    position: relative;
+    height: 18px;
+    width: 18px;
+    bottom: -0.2rem;
+  }
+ 
+  .wrapper {
+    display: block
+  }
+
+  .overlay2 {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 99998;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .overlay2.active {
+    display: block;
+    opacity: 1;
+  }
+
+  .btn {
+    white-space: normal !important;
+    word-wrap: break-word; 
+  }
+
+  @media (min-width: 576px) {
+    #ebliftoff_small {
+      display: none;
+    }
+  }
+
+  @media (min-width: 576px) {
+    #extrametric_ns_small {
+      display: none;
+    }
+  }
+
+  @media (min-width: 768px) {
+    #extrametric_ls_small {
+      display: none;
+    }
+  }
+
+  @media (max-width: 576px) {
+    #esd-stepback {
+      display: none;
+    }
+
+    #esd-stepforward {
+      display: none;
+    }
+  }
+
+  .modal-dialog {
+    max-width: 550px;
+  }
+
+  .icon-settingsmenu {
+    line-height: 16px;
+    height: 16px;
+    margin-right: 12px !important;
+  }
+
+  .tinyicon {
+    font-size: 14px;
+    line-height: 14px;
+    position: relative;
+    bottom: -0.16rem;
+  }
+
+  .tinyicon-check {
+    font-size: 14px;
+    line-height: 14px;
+    position: relative;
+    bottom: -0.12rem;
+  }
+
+  .material-icons {
+    font-feature-settings: "liga"
+  }
+
+</style>
+<script>
+
+var browser_name = bowser.name
+var browser_version = bowser.version
+var browser_os = bowser.osname
+var browser_osver = bowser.osversion
+var desktop_flag;
+var mobile_flag;
+var tablet_flag;
+
+try {
+  mobile_flag = bowser.mobile
+  tablet_flag = bowser.tablet
+} catch (e) {
+  mobile_flag = false;
+  tablet_flag = false;
+  desktop_flag = false;
+}
+
+var full_os = browser_os + " " + browser_osver
+
+
+if (browser_name == "Chrome" || browser_name == "Chromium") {
+  if (browser_version < 32) {
+    window.location.replace("/incompatiblebrowser/")
+  }
+} else if (browser_name == "Firefox") {
+  if (browser_version < 31 && browser_os !== "iOS" && browser_os !== "macOS") {
+    window.location.replace("/incompatiblebrowser/")
+  }
+} else if (browser_name == "Internet Explorer") {
+  if (browser_version < 11) {
+    window.location.replace("/incompatiblebrowser/")
+  }
+} else if (browser_name == "Safari") {
+  if (browser_version < 7) {
+    window.location.replace("/incompatiblebrowser/")
+  }
+} else if (browser_name == "Opera") {
+  if (browser_version < 20) {
+    window.location.replace("/incompatiblebrowser/")
+  }
+} else if (browser_name == "Android") {
+  if (browser_version <= 4) {
+    window.location.replace("/incompatiblebrowser/")
+  }
+} else if (browser_name == "Windows Phone") {
+  if (browser_version < 10) {
+    window.location.replace("/incompatiblebrowser/")
+  }
+}
+
+moment.locale(navigator.language)
+
+// BEGIN ENVIRONMENT VARIABLES
+var ptstart_ts = 1617429600
+var endrow = 897
+var endrow_plusone = 898
+var geoapi_url = "https://geoapi.easterbunny.cc/api/v1/ipLocation"
+var geoapi_key = "d26f9249c8a70860c73a9aaf019ec04124ce92e2ee5a4b37f2"
+var home_stop = "Easter Bunny's Workshop"
+// END ENVIRONMENT VARIABLES
+
+var ls_avail = true;
+var appearance = "automatic";
+var mapmode = "street";
+var bunnybounce = "off";
+var weathersummary = "off";
+var ebarrival = "on";
+var zoomarg_override = "off";
+var zoomarg_override_level = "5";
+var rawurl;
+var thirdbox = "baskets";
+var unit_setting = "automatic";
+var units = "metric"
+var defaultzl = "default"
+var chromemap_fix = "off"
+var mobilemetrics = "on"
+var localtime = "on"
+
+try {
+  localStorage.setItem("ls-test", "ls-test")
+  localStorage.removeItem("ls-test")
+} catch (e) {
+  ls_avail = false;
+}
+
+// Ensure that local settings are init'd, otherwise select proper buttons for settings.
+// Also don't do the initting if the ls is unavail
+if (ls_avail == true) {
+  if (localStorage.getItem("appearance") == null) {
+    localStorage.setItem("appearance", "automatic")
+  }
+
+  if (localStorage.getItem("mapmode") == null) {
+    localStorage.setItem("mapmode", "street")
+  }
+
+  if (localStorage.getItem("bunnybounce") == null) {
+    localStorage.setItem("bunnybounce", "off")
+  }
+
+  if (localStorage.getItem("weathersummary") == null) {
+    localStorage.setItem("weathersummary", "on")
+  }
+
+  if (localStorage.getItem("ebarrival") == null) {
+    localStorage.setItem("ebarrival", "on")
+  }
+
+  if (localStorage.getItem("thirdbox") == null) {
+    localStorage.setItem("thirdbox", "baskets")
+  }
+
+  if (localStorage.getItem("units") == null) {
+    localStorage.setItem("units", "automatic")
+  }
+
+  if (localStorage.getItem("defaultzl") == null) {
+    localStorage.setItem("defaultzl", "default")
+  }
+
+  if (localStorage.getItem("chromemap_fix") == null) {
+    localStorage.setItem("chromemap_fix", "off")
+  }
+
+  if (localStorage.getItem("mobilemetrics") == null) {
+    localStorage.setItem("mobilemetrics", "on")
+  }
+
+  if (localStorage.getItem("localtime") == null) {
+    localStorage.setItem("localtime", "off")
+  }
+
+  // Load in LS settings, only changing them if they regex match to pre-selected options
+  if ((localStorage.getItem("appearance")).match("^automatic$|^light$|^dark$")) {
+    appearance = localStorage.getItem("appearance")
+  }
+
+  if ((localStorage.getItem("mapmode")).match("^street$|^satellite$|^hybrid$")) {
+    mapmode = localStorage.getItem("mapmode")
+  }
+
+  if ((localStorage.getItem("bunnybounce")).match("^off$|^on$")) {
+    bunnybounce = localStorage.getItem("bunnybounce")
+  }
+
+  if ((localStorage.getItem("weathersummary")).match("^off$|^on$")) {
+    weathersummary = localStorage.getItem("weathersummary")
+  }
+
+  if ((localStorage.getItem("ebarrival")).match("^off$|^on$")) {
+    ebarrival = localStorage.getItem("ebarrival")
+  }
+
+  if ((localStorage.getItem("thirdbox")).match("^baskets$|^carrots$|^distance$|^speed$|^distancefromyou$")) {
+    thirdbox = localStorage.getItem("thirdbox")
+  } 
+
+  if ((localStorage.getItem("units")).match("^automatic$|^imperial$|^metric$")) {
+    unit_setting = localStorage.getItem("units")
+  }
+
+  if ((localStorage.getItem("defaultzl")).match("^0$|^1$|^2$|^3$|^4$|^5$|^6$|^7$|^8$|^9$|^10$|^11$|^12$|^13$|^14$|^default$")) {
+    defaultzl = localStorage.getItem("defaultzl")
+  }
+
+  if ((localStorage.getItem("chromemap_fix")).match("^off$|^on$")) {
+    chromemap_fix = localStorage.getItem("chromemap_fix")
+  }
+
+  if ((localStorage.getItem("mobilemetrics")).match("^off$|^on$")) {
+    mobilemetrics = localStorage.getItem("mobilemetrics")
+  }
+
+  if ((localStorage.getItem("localtime")).match("^off$|^on$")) {
+    localtime = localStorage.getItem("localtime")
+  }
+}
+
+// https://stackoverflow.com/a/901144
+function getParams(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+// Depending on current times, run redirections to other pages.
+
+var ts = Math.round((new Date()).getTime() / 1000);
+
+if (ts < ptstart_ts) {
+  window.location.replace("/countdown/")
+}
+
+
+var diffLat;
+var gmaps_avail = false;
+var diffLng;
+var basketsDiff;
+var startBaskets;
+var endBaskets;
+var carrotsDiff;
+var startCarrots;
+var endCarrots;
+var distanceDiff;
+var startDistance;
+var endDistance;
+var speed;
+var pxoffset = 0;
+var old_iw = window.innerWidth;
+var mapCentered = true;
+var clickListener;
+var timezone_abbrv;
+var window_orientation = window.orientation;
+var pcs_raw = window.matchMedia('(prefers-color-scheme: dark)');
+var doc_ready = false;
+var route_ready = false;
+var pt_state = false;
+var tracking_over = false;
+var pt_endrow = "42";
+var tracking_zl = 6;
+var tracking_zl_override;
+var ebarrivaltext = "Shows when the Easter Bunny is estimated to arrive at your location. This isn't visible, since the Easter Bunny visited your area."
+var ebarrivaltext_over = "Show when the Easter Bunny is estimated to arrive at your location in the Next Stop box. This isn't visible, since the Easter Bunny has returned home."
+var zltext_pt = "Sets the map zoom level when the tracker is loaded, and the Easter Bunny is being recentered. This won't take effect until tracking starts."
+var zltext_after = "Sets the default map zoom level. Used when the tracker is loaded, and the Easter Bunny is being recentered. This won't take effect until the Easter Bunny's next journey."
+var zltext_during = "Sets the default map zoom level. Used when the tracker is loaded, and the Easter Bunny is being recentered."
+var mctitle_distance_1 = "Click to change the metric shown to Distance traveled"
+var mctitle_distance_2 = "Click to change the metric shown to Distance travelled"
+var mctitle_speed = "Click to change the metric shown to Speed"
+var mctitle_baskets = "Click to change the metric shown to Baskets delivered"
+var mctitle_carrots = "Click to change the metric shown to Carrots eaten"
+var mctitle_distancefromyou = "Click to change the metric shown to Distance from you"
+var mc_dfy_error = "Metric unavailable, could not query Geo API. Check settings for info."
+var mc_dfy_unknown = "Metric unavailable, failed to determine location. Check settings for info."
+var pl_denied = "Couldn't determine precise location, permission was denied. Check your browser settings."
+var pl_timeout = "Couldn't determine precise location, a timeout occurred. Check your browser settings & refresh the tracker."
+var pl_unknown = "Couldn't determine precise location due to an unknown error. Check your browser settings & refresh the tracker."
+var ebarrival_loaded = false;
+var sleepDetect_interval;
+var nextstop;
+var laststop;
+var distance_suffix = ""
+var speed_suffix = ""
+var auto_unit = ""
+var midivisor = 1.609344
+var imperial_locales = ["en-us", "en-gb", "en"]
+var traveled_locales = ["en-us", "en"]
+var travel_ls = 2
+var chromium_browsers = ["Chrome", "Chromium", "Vivaldi", "Samsung Internet for Android", "Silk"]
+var geoapi_avail = false
+var geoapi_timedout = false
+var geoapi_failed = false
+var ebarrival_lat
+var ebarrival_lng
+var geoapi_accuracy
+
+if (traveled_locales.indexOf(navigator.language.toLowerCase()) != -1) {
+  travel_ls = 1
+}
+
+function updateUnits() {
+  if (imperial_locales.indexOf(navigator.language.toLowerCase()) != -1) {
+    auto_unit = "Imperial"
+  } else {
+    auto_unit = "Metric"
+  }
+
+  if (unit_setting == "metric" || (unit_setting == "automatic" && imperial_locales.indexOf(navigator.language.toLowerCase()) == -1)) {
+    units = "metric"
+    distance_suffix = " km"
+    speed_suffix = " km/h"
+  } else if (unit_setting == "imperial" || (unit_setting == "automatic" && imperial_locales.indexOf(navigator.language.toLowerCase()) != -1)) {
+    units = "imperial"
+    distance_suffix = " mi"
+    speed_suffix = " mph"
+  }
+}
+
+updateUnits()
+
+function geoapi_timeout() {
+  if (!geoapi_avail && !geoapi_failed) {
+    geoapi_timedout = true
+    $("#distancefromyou").html(mc_dfy_error)
+    if (thirdbox == "distancefromyou") {
+      setEMbody(mc_dfy_error)
+    }
+  }
+}
+
+var geoapi_timeout_func = setTimeout(geoapi_timeout, 15000)
+
+// Situation is either "onload" for first bootup, or "settings" to go from settings.
+
+
+function tlsWrap(number) {
+  if (browser_name == "Safari" && browser_version <= 9) {
+    return numberWithCommas(number)
+  } else {
+    return number.toLocaleString()
+  }
+}
+
+function setEMbody(text, suffix) {
+  $("#extrametric_ls_body").html(text)
+  $("#extrametric_ns_body").html(text)
+  if (suffix) {
+    $("#extrametric_ls_body").append(suffix)
+    $("#extrametric_ns_body").append(suffix)
+  }
+}
+
+function setDFYtext(distance, suffix) {
+  $("#distancefromyou").html(distance + suffix)
+  setEMbody(distance, suffix)
+}
+
+function updateBDmetric(baskets) {
+  $("#basketsdelivered").html(tlsWrap(baskets))
+  if (thirdbox == "baskets") {
+    setEMbody(tlsWrap(baskets))
+  }
+}
+
+function updateCEmetric(carrots) {
+  $("#carrotseaten").html(tlsWrap(carrots))
+  if (thirdbox == "carrots") {
+    setEMbody(tlsWrap(carrots))
+  }
+}
+
+function updateDTmetric(distance) {
+  if (units == "imperial") {
+    distance = distance / midivisor
+  }
+  distance = Math.round(distance)
+  $("#distancetravelled").html(tlsWrap(distance) + distance_suffix)
+  if (thirdbox == "distance") {
+    setEMbody(tlsWrap(distance), distance_suffix)
+  }
+}
+
+function updateSPmetric(speed) {
+  speed = speed * speedMultiplier()
+  if (units == "imperial") {
+    speed = speed / midivisor
+  }
+  speed = Math.round(speed)
+  $("#speed").html(tlsWrap(speed) + speed_suffix)
+  if (thirdbox == "speed") {
+    setEMbody(tlsWrap(speed), speed_suffix)
+  }
+}
+
+// Global function to update distance for you metric, call whenever the metric needs updating
+function updateDFYmetric(bunnylat, bunnylng) {
+  //
+  if (thirdbox == "distancefromyou" && geoapi_avail) {
+    if (bunnylat == null || bunnylng == null) {
+      try {
+        bunnylat = bunnyMarker.getPosition().lat()
+        bunnylng = bunnyMarker.getPosition().lng()
+      } catch (error) {
+        return
+      }
+    }
+    var distance_ref;
+    distance_ref = haversineCalc(bunnylat, bunnylng, ebarrival_lat, ebarrival_lng)
+    var distance = distance_ref
+    if (units == "imperial") {
+      distance = distance / midivisor
+    }
+    var distance_rounded = Math.round(distance)
+    if (distance_ref < geoapi_accuracy) {
+      distance_rounded = "Under " + geoapi_accuracy
+      if (units == "imperial") {
+        distance_rounded = "Under " + Math.floor(geoapi_accuracy / midivisor)
+      }
+    }
+
+    setDFYtext(tlsWrap(distance_rounded), distance_suffix)
+  } else if (thirdbox == "distancefromyou" && !geoapi_avail && !geoapi_timedout && !geoapi_failed) {
+    setDFYtext("Loading...", "")
+  } else if (thirdbox == "distancefromyou" && !geoapi_avail && !geoapi_timedout && geoapi_failed) {
+    setDFYtext(mc_dfy_unknown, "")
+  } else if (thirdbox == "distancefromyou" && !geoapi_avail && geoapi_timedout && !geoapi_failed) {
+    setDFYtext(mc_dfy_error, "")
+  }
+}
+
+if (defaultzl != "default") {
+  tracking_zl = parseInt(defaultzl)
+} else if (defaultzl == "default") {
+  if (bowser.mobile) {
+    tracking_zl = 5
+  } else {
+    tracking_zl = 6
+  }
+}
+
+function returnAppearance() {
+  if (appearance == "dark" || ((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) && appearance == "automatic")) {
+    return "Dark"
+  } else {
+    return "Light"
+  }
+}
+
+// Returns random number between 0.92 and 1.08 (inclusive) as a speed multiplier
+function speedMultiplier() {
+  return Math.random() * (1.001 - 0.999) + 0.999
+}
+
+window.addEventListener("orientationchange", function() {
+  // 800 is generally a good litmus test for if we're working with a phone in landscape mode.
+  // UA testing generally isn't a fantastic idea though
+  setTimeout(parse_oc, 600)
+})
+
+function parse_oc () {
+  // Old code has a condition on all of these for window.innerWidth < 820
+  if (window_orientation == 0 && (window.orientation == -90 || window.orientation == 90) && window.innerHeight < 500) {
+    pxoffset = window.innerHeight * 0.33;
+    map.panBy(0, -pxoffset)
+    old_iw = window.innerWidth;
+  } else if ((window_orientation == -90 || window_orientation == 90) && (window.orientation == 90 || window.orientation == -90) && window.innerHeight < 500) {
+    return
+    // Handles landscape to landscape
+  } else if (window_orientation == 0 && window.orientation == 0 && window.innerHeight < 500) {
+    // Handle chrome edge case
+    parse_oc_chromea10();
+    return
+  } else {
+    map.panBy(0, pxoffset)
+    pxoffset = 0;
+    old_iw = window.innerWidth;
+    // Webkit sucks - must scroll to 0,1. Shouldn't affect other browsers if UA manipulation is used
+    if (browser_name == "Safari" || browser_os == "iOS") {
+      setTimeout(function () {
+        window.scrollTo(0, 1)
+      }, 50)
+    }
+  }
+
+  window_orientation = window.orientation
+}
+
+// https://stackoverflow.com/a/2901298
+// Mainly for browsers without full toLocaleString compatibility
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+function parse_oc_chromea10 () {
+  // Edge case to parse rotation in Android 10 Chrome (79-80+). It doesn't report a proper screen orientation. 
+  // Android 9 or lower Chrome does...not sure what's up.
+  if (old_iw > window.innerWidth) {
+      map.panBy(0, pxoffset)
+      pxoffset = 0;
+    } else {
+      pxoffset = window.innerHeight * 0.33;
+      map.panBy(0, -pxoffset)
+    }
+    old_iw = window.innerWidth;
+    window_orientation = window.orientation;
+}
+
+pcs_raw.addListener(function() {
+  if ((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    $("#settings_autotheme").html("Dark")
+  } else if ((!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches))) {
+    $("#settings_autotheme").html("Light")
+  }
+  if (((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) && appearance == "automatic")) {
+    $('link[rel="stylesheet"][href="/assets/stylesheets/light.css"]').prop('disabled', true);
+    $('link[rel="stylesheet"][href="/assets/stylesheets/dark.css"]').prop('disabled', false);
+    $("#settings_autotheme").html("Dark")
+    if (map.getMapTypeId() == "roadmap") {
+      map.setOptions({
+        styles: gmap_styles_dark
+      })
+    }
+    if (mapCentered == true) {
+          $(".center-icon").css("background-image", "url('/assets/icons/bunnyuncenter-dark.png')")
+          $(".center-icon-dyn").css("background-image", "url('/assets/icons/bunnyuncenter-light.png')")
+        } else {
+          $(".center-icon").css("background-image", "url('/assets/icons/bunnycenter-dark.png')")
+          $(".center-icon-dyn").css("background-image", "url('/assets/icons/bunnycenter-light.png')")
+        }
+      
+    if (thirdbox == "baskets") {
+      $("#metric_button").attr("class", "basket-icon-light")
+    } else if (thirdbox == "carrots") {
+      $("#metric_button").attr("class", "carrot-icon-light")
+    }
+  } else if ((!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) && appearance == "automatic")) {
+    $('link[rel="stylesheet"][href="/assets/stylesheets/light.css"]').prop('disabled', false);
+    $('link[rel="stylesheet"][href="/assets/stylesheets/dark.css"]').prop('disabled', true);
+    $("#settings_autotheme").html("Light")
+    if (map.getMapTypeId() == "roadmap") {
+      map.setOptions({
+        styles: gmap_styles_light
+      })
+    }
+    if (mapCentered == true) {
+          $(".center-icon").css("background-image", "url('/assets/icons/bunnyuncenter-dark.png')")
+          $(".center-icon-dyn").css("background-image", "url('/assets/icons/bunnyuncenter-dark.png')")
+        } else {
+          $(".center-icon").css("background-image", "url('/assets/icons/bunnycenter-dark.png')")
+          $(".center-icon-dyn").css("background-image", "url('/assets/icons/bunnycenter-dark.png')")
+        }
+    
+    if (thirdbox == "baskets") {
+      $("#metric_button").attr("class", "basket-icon-dark")
+    } else if (thirdbox == "carrots") {
+      $("#metric_button").attr("class", "carrot-icon-dark")
+    }
+  }
+})
+
+// https://stackoverflow.com/a/901144
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+$(function () {
+  doc_ready = true;
+  if (appearance == "dark" || ((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) && appearance == "automatic")) {
+    $('link[rel="stylesheet"][href="/assets/stylesheets/light.css"]').prop('disabled', true);
+    $('link[rel="stylesheet"][href="/assets/stylesheets/dark.css"]').prop('disabled', false);
+    $(".center-icon").css("background-image", "url('/assets/icons/bunnyuncenter-dark.png')")
+    $(".center-icon-dyn").css("background-image", "url('/assets/icons/bunnyuncenter-light.png')")
+  } else if (appearance == "light" || (!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) && appearance == "automatic")) {
+    $(".center-icon").css("background-image", "url('/assets/icons/bunnyuncenter-dark.png')")
+    $(".center-icon-dyn").css("background-image", "url('/assets/icons/bunnyuncenter-dark.png')")
+  }
+
+  $(".form-check-input").click(function() {
+    updateSettings()
+  })
+
+  $("#defaultZoom").on("change", function() {
+    updateSettings()
+  })
+
+  if (ls_avail == false) {
+    $(".lsunavail_warning").show()
+  }
+
+  // Search engines don't like the exclamation point, so we add it in after page load
+  $("#aboutModalLabel").html("Welcome to track.easterbunny.cc!")
+
+  $("#containeroverlay").show()
+
+  var full_os = browser_os + " " + browser_osver
+
+  if (full_os.includes("iOS 9") || full_os.includes("iOS 8") || full_os.includes("iOS 7")) {
+    $("#center-ios9text").show()
+  }
+  // Fill in buttons for preferences on load
+
+  if (appearance == "automatic") {
+    $("#siteTheme_radio1").prop("checked", true)
+  } else if (appearance == "light") {
+    $("#siteTheme_radio2").prop("checked", true)
+  } else if (appearance == "dark") {
+    $("#siteTheme_radio3").prop("checked", true)
+  } else {
+    $("#siteTheme_radio1").prop("checked", true)
+  }
+
+  if (mapmode == "street") {
+    $("#mapStyle_radio1").prop("checked", true)
+  } else if (mapmode == "satellite") {
+    $("#mapStyle_radio2").prop("checked", true)
+  } else if (mapmode == "hybrid") {
+    $("#mapStyle_radio3").prop("checked", true)
+  } else {
+    $("#mapStyle_radio1").prop("checked", true)
+  }
+
+  if (bunnybounce == "off") {
+    $("#bounceeffect_radio2").prop("checked", true)
+  } else if (bunnybounce == "on") {
+    $("#bounceeffect_radio1").prop("checked", true)
+  } else {
+    $("#bounceeffect_radio2").prop("checked", true)
+  }
+
+  if (weathersummary == "off") {
+    $("#weatherSummary_radio2").prop("checked", true)
+  } else if (weathersummary == "on") {
+    $("#weatherSummary_radio1").prop("checked", true)
+    $("#esdWeather2-wrapper").show()
+  } else {
+    $("#weatherSummary_radio2").prop("checked", true)
+  }
+
+  if (ebarrival == "off") {
+    $("#ebArrival_radio2").prop("checked", true)
+    $("#ebarrival_small").hide()
+  } else if (ebarrival == "on") {
+    $("#ebArrival_radio1").prop("checked", true)
+  } else {
+    $("#ebArrival_radio1").prop("checked", true)
+  }
+
+  if (unit_setting == "automatic") {
+    $("#metricUnits_automatic").prop("checked", true)
+  } else if (unit_setting == "metric") {
+    $("#metricUnits_metric").prop("checked", true)
+  } else if (unit_setting == "imperial") {
+    $("#metricUnits_imperial").prop("checked", true)
+  }
+
+  if (bowser.mobile) {
+    $("#dz-5span").html("5 (default)")
+    $("#dz-5span").attr("value", "default")
+    $("#dz-6span").html("6")
+    $("#dz-6span").attr("value", "6")
+  }
+
+  if (localtime == "on") {
+    $("#localTime_radio1").prop("checked", true)
+  } else if (localtime == "off") {
+    $("#localTime_radio2").prop("checked", true)
+  } else {
+    $("#localTime_radio2").prop("checked", true)
+  }
+
+  if (defaultzl == "default") {
+    if (bowser.mobile) {
+      $("#defaultZoom").prop("selectedIndex", 5)
+    } else {
+      $("#defaultZoom").prop("selectedIndex", 6)
+    }
+  } else {
+    $("#defaultZoom").prop("selectedIndex", parseInt(defaultzl))
+  }
+
+  $("#metricUnits_autospan").html(auto_unit)
+
+  if (thirdbox == "carrots") {
+    if (returnAppearance() == "Dark") {
+      $("#metric_button").attr("class", "carrot-icon-light")
+    } else {
+      $("#metric_button").attr("class", "carrot-icon-dark")
+    }
+    $("#metric_button").html("")
+    $("#metricbox-title").html("Carrots eaten")
+    $("#basketsdelivered").hide()
+    $("#distancetravelled").hide()
+    $("#speed").hide()
+    $("#distancefromyou").hide()
+    $("#carrotseaten").show()
+    $("#metricCustomization_carrots").prop("checked", true)
+    $("#extrametric_ls_header").html("Carrots eaten: ")
+    $("#extrametric_ns_header").html("Carrots eaten: ")
+    if (travel_ls == 2) {
+      $("#metricbutton_parent").prop("title", mctitle_distance_2)
+    } else {
+      $("#metricbutton_parent").prop("title", mctitle_distance_1)
+    }
+  } else if (thirdbox == "distance") {
+    $("#metric_button").attr("class", "material-icons")
+    // TODO: Get the proper code in for square-foot
+    $("#metric_button").html("square_foot")
+    if (travel_ls == 2) {
+      $("#extrametric_ns_header").html("Distance travelled: ")
+      $("#extrametric_ls_header").html("Distance travelled: ")
+      $("#metricbox-title").html("Distance travelled")
+    } else if (travel_ls == 1) {
+      $("#extrametric_ns_header").html("Distance traveled: ")
+      $("#extrametric_ls_header").html("Distance traveled: ")
+      $("#metricbox-title").html("Distance traveled")
+    }
+    $("#basketsdelivered").hide()
+    $("#carrotseaten").hide()
+    $("#speed").hide()
+    $("#distancefromyou").hide()
+    $("#distancetravelled").show()
+    $("#metricCustomization_distance").prop("checked", true)
+    $("#metricbutton_parent").prop("title", mctitle_speed)
+  } else if (thirdbox == "speed") {
+    $("#metric_button").attr("class", "material-icons")
+    // TODO: Get the proper code in for speed
+    $("#metric_button").html("speed")
+    $("#metricbox-title").html("Speed")
+    $("#basketsdelivered").hide()
+    $("#carrotseaten").hide()
+    $("#distancetravelled").hide()
+    $("#distancefromyou").hide()
+    $("#speed").show()
+    $("#metricCustomization_speed").prop("checked", true)
+    $("#extrametric_ls_header").html("Speed: ")
+    $("#extrametric_ns_header").html("Speed: ")
+    $("#metricbutton_parent").prop("title", mctitle_distancefromyou)
+  } else if (thirdbox == "distancefromyou") {
+    $("#metric_button").attr("class", "material-icons")
+    $("#metric_button").html("near_me")
+    $("#metricbox-title").html("Distance from you")
+    $("#basketsdelivered").hide()
+    $("#carrotseaten").hide()
+    $("#distancetravelled").hide()
+    $("#speed").hide()
+    $("#distancefromyou").show()
+    $("#metricCustomization_distancefromyou").prop("checked", true)
+    $("#extrametric_ls_header").html("Distance from you: ")
+    $("#extrametric_ns_header").html("Distance from you: ")
+    $("#metricbutton_parent").prop("title", mctitle_baskets)
+  } else if (thirdbox == "baskets") {
+    if (returnAppearance() == "Dark") {
+      $("#metric_button").attr("class", "basket-icon-light")
+      $("#metric_button").html("")
+    } else {
+      $("#metric_button").attr("class", "basket-icon-dark")
+      $("#metric_button").html("")
+    }
+    $("#metricCustomization_baskets").prop("checked", true)
+    $("#extrametric_ls_header").html("Baskets delivered: ")
+    $("#extrametric_ns_header").html("Baskets delivered: ")
+    $("#metricbutton_parent").prop("title", mctitle_carrots)
+  }
+
+  // Fill in the automatic span in preferences
+  try {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    $("#settings_autotheme").html("Dark")
+  } else {
+    $("#settings_autotheme").html("Light")
+  }
+  } catch (e) {
+    $("#settings_autotheme").html("Light")
+  }
+
+  if (bowser.mobile) {
+    $("#defaultzl-resetsettings").html("5 (default for mobile)")
+    $("#defaultzl-resetsettings-2").html("5 (default for mobile)")
+  } else {
+    $("#defaultzl-resetsettings").html("6 (default for tablet/desktop)")
+    $("#defaultzl-resetsettings-2").html("6 (default for tablet/desktop)")
+  }
+
+  if (browser_name == "Internet Explorer") {
+    $("#ie-lsunavail").show()
+  } else if (browser_name == "Microsoft Edge") {
+    $("#edge-lsunavail").show()
+  } else if (browser_name == "Firefox") {
+    $("#firefox-lsunavail").show()
+  } else if (browser_name == "Chrome") {
+    $("#chrome-lsunavail").show()
+  } else if (browser_name == "Safari") {
+    $("#safari-lsunavail").show()
+  } else if (browser_name == "Opera") {
+    $("#opera-lsunavail").show()
+  } else {
+    $("#unknown-lsunavail").show()
+  }
+
+  $("#browser-lsunavil").html(browser_name + " " + browser_version)
+  $("#browser-geoapi").html(browser_name + " " + browser_version)
+  $("#osname-lsunavail").html(browser_os + " " + browser_osver)
+  $("#osname-geoapi").html(browser_os + " " + browser_osver)
+
+  if (mobile_flag) {
+    $("#devicetype-lsunavail").html("Mobile")
+    $("#devicetype-geoapi").html("Mobile")
+  } else if (tablet_flag) {
+    $("#devicetype-lsunavail").html("Tablet")
+    $("#devicetype-geoapi").html("Tablet")
+  } else if (desktop_flag == false) {
+    $("#devicetype-lsunavail").html("Unknown")
+    $("#devicetype-geoapi").html("Unknown")
+  } else {
+    $("#devicetype-lsunavail").html("Desktop")
+    $("#devicetype-geoapi").html("Desktop")
+  }
+
+  if (browser_name == "Samsung Internet for Android") {
+    $("#saminternet-autodark").show()
+  }
+
+  if (full_os.includes("macOS 10.15")) {
+    $("#macos-warn-lsunavail").show()
+    $("#macos-warn-geoapi").show()
+  }
+
+  if (full_os.includes("macOS 10.16")) {
+    $("#macos11-warn-lsunavail").show()
+    $("#macos11-warn-geoapi").show()
+  }
+
+  if (travel_ls == 1) {
+    $("#dl-settings-span").html("Distance traveled")
+  }
+
+  if (chromium_browsers.indexOf(browser_name) != -1 && browser_os != "iOS") {
+    $("#chromemap-fix-settingsdiv").show()
+    $(".ras-chromeline").show()
+    if (chromemap_fix == "on") {
+      $('link[rel="stylesheet"][href="/assets/stylesheets/chromemap-fix.css"]').prop("disabled", false)
+    }
+  }
+
+  if (chromemap_fix == "on") {
+    $("#chromemap_fix_on").prop("checked", true)
+  } else if (chromemap_fix == "off") {
+    $("#chromemap_fix_off").prop("checked", true)
+  }
+  
+  if (mobilemetrics == "on") {
+    $("#mobileMetrics_on").prop("checked", true)
+  } else if (mobilemetrics == "off") {
+    $("#mobileMetrics_off").prop("checked", true)
+  }
+
+  if (mobilemetrics == "off") {
+    $("#extrametric_ls_small").hide()
+    $("#extrametric_ns_small").hide()
+  }
+
+  // Debugging for Geo API & LS Unavail prompts
+
+  if (getParams("lsunavail") == "true") {
+    ls_avail = false
+    $(".lsunavail_warning").show()
+  }
+})
+
+
+function getTime() {
+    return (new Date()).getTime();
+}
+
+var lastInterval = getTime();
+
+function sleepDetect() {
+    var now = getTime();
+    var diff = now - lastInterval;
+    var offBy = diff - 1000;
+    lastInterval = now;
+
+    if(offBy > 2000) { // This code comes from Stack Overflow but with a 2 second time diff so we're not getting in the way of any vischange listeners
+        vischange()
+    }
+}
+
+function updateMarker(reset) {
+  var modifier = (new Date().getTime()) / 1000 - routedata['destinations'][(datarow - 1).toString()]['unixarrival']
+  if (reset == true) {
+    diffLat = endlat - startlat;
+    diffLng = endlon - startlon;
+
+    if (diffLng > 200) {
+      diffLng = diffLng - 360;
+    } else if (diffLng < -200) {
+      diffLng = diffLng + 360
+    }
+
+
+    var newLatLng = new google.maps.LatLng(startlat, startlon)
+    var proj = mapov.getProjection();
+    var offpoint = proj.fromLatLngToContainerPixel(newLatLng);
+    offpoint.y = offpoint.y - pxoffset;
+    bunnyMarker.setPosition(newLatLng);
+    updateDFYmetric(startlat, startlon)
+    if (mapCentered == true) {
+      map.setCenter(proj.fromContainerPixelToLatLng(offpoint))
+    }
+
+    var basket_icon = {
+      url: "/assets/icons/basket-96.png",
+      scaledSize: new google.maps.Size(24, 24)
+    }
+
+    var unixstamp = new Date(routedata['destinations'][(datarow - 1).toString()]['unixarrival'] * 1000)
+    var momentobj = moment(routedata['destinations'][(datarow - 1).toString()]['unixarrival'] * 1000)
+    var timestring = momentobj.format("LL, LT")
+
+    var local_abbr = moment.tz.guess(true);
+    var local_abbrv = moment.tz.zone(local_abbr).abbr(unixstamp);
+
+
+
+    if (routedata['destinations'][(datarow - 1).toString()]['city'] == "International Space Station") {
+      basket_icon = {
+        url: "/assets/icons/iss-96-3.png",
+        scaledSize: new google.maps.Size(24, 24)
+      }
+    }
+    if (routedata['destinations'][(datarow - 1).toString()]['city'] == "International Space Station") {
+      setTimeout(function (datarow) {
+      var marker = new google.maps.Marker({
+      position: {lat: routedata['destinations'][(datarow - 1).toString()]['lat'], lng: routedata['destinations'][(datarow - 1).toString()]['lng']},
+      map: map,
+      title: routedata['destinations'][(datarow - 1).toString()]['city'] + ", " + routedata['destinations'][(datarow - 1).toString()]['region'] +
+      "\nArrived: " + timestring + " " + local_abbrv + "\n" + "For more info, click on this basket!",
+      icon: basket_icon,
+      zindex: datarow - 1
+      })
+
+      google.maps.event.addListener(marker, 'click', (function (marker, datarow) {
+          return function() {
+            renderesd((datarow - 1).toString())
+          }
+        })(marker, datarow));
+      
+      }, 1000, datarow)
+    } else if (routedata['destinations'][(datarow - 1).toString()]['city'] != home_stop) {
+      setTimeout(function (datarow) {
+      var marker = new google.maps.Marker({
+      position: {lat: routedata['destinations'][(datarow - 1).toString()]['lat'], lng: routedata['destinations'][(datarow - 1).toString()]['lng']},
+      map: map,
+      title: routedata['destinations'][(datarow - 1).toString()]['city'] + ", " + routedata['destinations'][(datarow - 1).toString()]['region'] +
+      "\nArrived: " + timestring + " " + local_abbrv + "\n" + "For more info, click on this basket!",
+      icon: basket_icon,
+      zindex: datarow - 1
+      })
+
+      google.maps.event.addListener(marker, 'click', (function (marker, datarow) {
+          return function() {
+            renderesd((datarow - 1).toString())
+          }
+        })(marker, datarow));
+      
+      }, 1000, datarow)
+    }
+    
+    return
+  }
+  var lat = startlat + (diffLat * (modifier / seconds))
+  var lng = startlon + (diffLng * (modifier / seconds))
+  newLatLng = new google.maps.LatLng(lat, lng)
+  proj = mapov.getProjection();
+  offpoint = proj.fromLatLngToContainerPixel(newLatLng);
+  offpoint.y = offpoint.y - pxoffset;
+  if (mapCentered == true) {
+      map.setCenter(proj.fromContainerPixelToLatLng(offpoint))
+  }
+
+  bunnyMarker.setPosition(newLatLng);
+  updateDFYmetric(lat, lng)
+  return
+
+}
+
+function switchNextStop() {
+  laststop = routedata['destinations'][(datarow - 1).toString()]['city'] + ', ' + routedata['destinations'][(datarow - 1).toString()]['region']
+  nextstop = routedata['destinations'][(datarow).toString()]['city'] + ', ' + routedata['destinations'][(datarow).toString()]['region']
+  document.getElementById("lastseen").innerHTML = laststop
+  updateNextStop()
+}
+
+function monitorIters() {
+  var iters_raw = (new Date().getTime()) / 1000 - routedata['destinations'][(datarow - 1).toString()]['unixarrival']
+  iters = Math.floor(iters_raw);
+  if (iters % 60 == 0) {
+    ebarrival_updatetime()
+  }
+  if (iters == 1 && iters_raw <= 1.60) {
+    switchNextStop()
+  }
+  if (iters_raw >= seconds) {
+    trigger()
+  }
+}
+
+function trigger() {
+  clearInterval(trigger_interval);
+  if (pt_state == false) {
+    clearInterval(updatemarker_interval);
+    clearInterval(nextstop_interval);
+    clearInterval(updatebaskets_interval);
+  }
+  if (datarow == endrow) {
+    tracking_over = true
+    clearInterval(updatebaskets_interval);
+    clearInterval(nextstop_interval);
+    clearInterval(updatemarker_interval);
+    clearInterval(itercheck_interval)
+    $("#centerbutton").hide()
+    $("#centerbutton-text").hide()
+    $("#ebarrival_small").hide()
+    $("#ebarrival_small_html").html("")
+    $("#mapzl-span").html(zltext_after)
+    $("#ebarrivaltext_small").html(ebarrivaltext_over)
+    $("#geoapi-unavailwarn").hide()
+    $("#currzl-span").html("3")
+    bunnyMarker.setAnimation()
+    endlat = routedata['destinations'][(datarow).toString()]['lat']
+    endlon = routedata['destinations'][(datarow).toString()]['lng']
+    google.maps.event.removeListener(clickListener);
+    var newLatLng = new google.maps.LatLng(endlat, endlon)
+    var proj = mapov.getProjection();
+    try {
+      var offpoint = proj.fromLatLngToContainerPixel(newLatLng);
+    } catch (e) {
+      setTimeout(trigger, 500)
+      return
+    }
+    offpoint.y = offpoint.y - pxoffset;
+    map.setCenter(proj.fromContainerPixelToLatLng(offpoint))
+    map.setZoom(3)
+    newLatLng = new google.maps.LatLng(endlat, endlon)
+    bunnyMarker.setPosition(newLatLng)
+    var lastseen = routedata['destinations'][(datarow).toString()]['city'] + ', ' + routedata['destinations'][(datarow).toString()]['region']
+    nextstop = "The Easter Bunny has completed his journey. Thank you for tracking with us!"
+    var baskets = routedata['destinations'][(datarow).toString()]['eggsdelivered']
+    var carrots = routedata['destinations'][(datarow).toString()]['carrotseaten']
+    var distance = routedata['destinations'][(datarow).toString()]['distance-km']
+    speed = routedata['destinations'][(datarow).toString()]['speed-kph']
+    document.getElementById("lastseen").innerHTML = lastseen
+    document.getElementById("nextstop").innerHTML = nextstop
+
+    updateBDmetric(baskets)
+    updateCEmetric(carrots)
+    updateDTmetric(distance)
+    updateSPmetric(0)
+    updateDFYmetric()
+    
+    datarow = datarow + 1
+  } else {
+  datarow = datarow + 1
+  iters = 0;
+  var ptstate_switch = false;
+  if (routedata['destinations'][(datarow - 1).toString()]['region'] != "pt" && pt_state == true) {
+    pt_state = false;
+    ptstate_switch = true;
+    $("#mainrow").prop("hidden", false)
+    $("#ptrow").prop("hidden", true)
+    $("#centerbutton").show()
+    $("#centerbutton-text").show()
+    $("#mapzl-span").html(zltext_during)
+    if (bunnybounce == "on") {
+        bunnyMarker.setAnimation(google.maps.Animation.BOUNCE)
+    }
+    
+    if (ebarrival == "on" && ebarrival_avail == true) {
+      $("#ebarrival_small").show()
+    }
+    map.setZoom(tracking_zl)
+    clearInterval(ptcenter_interval)
+    clearInterval(ptcountdown_interval)
+  }
+
+  if (pt_state == false) {
+    /* setTimeout(function () {
+      ebarrival_updatetime()
+    }, 1000) */
+
+    // If the ESD step forward button is disabled but then we hit the next stop, unlock it to the user.
+    if ($("#esd-stepforward").prop("disabled") == true) {
+      $("#esd-stepforward").prop("disabled", false)
+    }
+
+    seconds = routedata['destinations'][datarow.toString()]['unixarrival'] - routedata['destinations'][(datarow - 1).toString()]['unixarrival']
+    seconds_true = routedata['destinations'][datarow.toString()]['unixarrival'] - ((new Date().getTime()) / 1000)
+    startBaskets = routedata['destinations'][(datarow - 1).toString()]['eggsdelivered']
+    endBaskets = routedata['destinations'][(datarow).toString()]['eggsdelivered']
+    startCarrots = routedata['destinations'][(datarow - 1).toString()]['carrotseaten']
+    endCarrots = routedata['destinations'][(datarow).toString()]['carrotseaten']
+    startDistance = routedata['destinations'][(datarow - 1).toString()]['distance-km']
+    var rounded_startDistance = startDistance
+    endDistance = routedata['destinations'][(datarow).toString()]['distance-km']
+    speed = routedata['destinations'][(datarow - 1).toString()]['speed-kph']
+    startlat = routedata['destinations'][(datarow - 1).toString()]['lat']
+    startlon = routedata['destinations'][(datarow - 1).toString()]['lng']
+    endlat = routedata['destinations'][datarow.toString()]['lat']
+    endlon = routedata['destinations'][datarow.toString()]['lng']
+    if (ptstate_switch == true) {
+      laststop = routedata['destinations'][(datarow - 1).toString()]['city'] + ', ' + routedata['destinations'][(datarow - 1).toString()]['region']
+      document.getElementById("lastseen").innerHTML = laststop
+      nextstop = routedata['destinations'][(datarow).toString()]['city'] + ', ' + routedata['destinations'][(datarow).toString()]['region']
+      updateNextStop()
+    }
+    startBaskets = routedata['destinations'][(datarow - 1).toString()]['eggsdelivered']
+    endBaskets = routedata['destinations'][(datarow).toString()]['eggsdelivered']
+    basketsDiff = endBaskets - startBaskets
+    carrotsDiff = endCarrots - startCarrots
+    distanceDiff = endDistance - startDistance
+    updateMarker(true);
+    updateBDmetric(startBaskets)
+    updateCEmetric(startCarrots)
+    updateDTmetric(startDistance)
+    updateSPmetric(speed)
+    updateDFYmetric()
+    nextstop_interval = setInterval(updateNextStop, 100)
+    updatebaskets_interval = setInterval(updateBaskets, 200)
+    updatemarker_interval = setInterval(updateMarker, 1000)
+  } else {
+    var message = routedata['destinations'][(datarow - 1).toString()]['city']
+    seconds = routedata['destinations'][datarow.toString()]['unixarrival'] - routedata['destinations'][(datarow - 1).toString()]['unixarrival']
+    document.getElementById("lastseen-pt").innerHTML = message
+  }
+}
+}
+
+function updateNextStop() {
+  var duration_mins = Math.floor((seconds - iters) / 60)
+  var duration_secs = (seconds - iters) - (duration_mins * 60)
+  var duration_secs_raw = (seconds - iters)
+
+  if (iters == 0 && (datarow - 1).toString() != pt_endrow) {
+    document.getElementById("nextstop").innerHTML = nextstop + " in 0 seconds"
+  } else if (duration_secs_raw < 60) {
+      if (duration_secs == 1) {
+      document.getElementById("nextstop").innerHTML = nextstop + " in " + duration_secs + " second"
+    } else {
+      document.getElementById("nextstop").innerHTML = nextstop + " in " + duration_secs + " seconds"
+    }
+
+  } else {
+    if (duration_mins == 1 && duration_secs == 1) {
+      document.getElementById("nextstop").innerHTML = nextstop + " in " + duration_mins + " minute, " + duration_secs + " second"
+    } else if (duration_mins == 1) {
+      document.getElementById("nextstop").innerHTML = nextstop + " in " + duration_mins + " minute, " + duration_secs + " seconds"
+    } else if (duration_secs == 1){
+      document.getElementById("nextstop").innerHTML = nextstop + " in " + duration_mins + " minutes, " + duration_secs + " second"
+  } else {
+    document.getElementById("nextstop").innerHTML = nextstop + " in " + duration_mins + " minutes, " + duration_secs + " seconds"
+  }
+}
+}
+
+function updateBaskets() {
+  if (pt_state == true || datarow == endrow_plusone) {
+    updateBaskets_endofrun()
+    return
+  }
+  var iters_unrounded = (new Date().getTime()) / 1000 - routedata['destinations'][(datarow - 1).toString()]['unixarrival']
+  var baskets = Math.round(startBaskets + (basketsDiff * (iters_unrounded / seconds)))
+  var distancetravelled = startDistance + (distanceDiff * (iters_unrounded / seconds))
+  var carrots = Math.round(startCarrots + (carrotsDiff * (iters_unrounded / seconds)))
+  updateBDmetric(baskets)
+  updateCEmetric(carrots)
+  updateDTmetric(distancetravelled)
+  updateSPmetric(speed)
+}
+
+function updateBaskets_endofrun() {
+  if (pt_state == true) {
+    return
+  }
+
+  if (datarow == endrow_plusone) {
+    var baskets = routedata['destinations'][(datarow - 1).toString()]['eggsdelivered']
+    var carrots = routedata['destinations'][(datarow - 1).toString()]['carrotseaten']
+    var distance = routedata['destinations'][(datarow - 1).toString()]['distance-km']
+    updateBDmetric(baskets)
+    updateCEmetric(carrots)
+    updateDTmetric(distance)
+    updateSPmetric(0)
+  }
+}
+
+
+var getJSON = function(url, callbak) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.timeout = 240000;
+    xhr.onload = function() {
+      callbak(xhr.response)
+    };
+
+    xhr.ontimeout = function() {
+      callbak("Request timed out")
+    }
+
+    xhr.onerror = function() {
+      callbak("Request had an error.")
+    }
+
+    xhr.onabort = function() {
+      callback("Request aborted.")
+    }
+    xhr.send();
+};
+// Define Google Maps styles
+
+var routedata;
+
+$.getJSON("/route.json", callback)
+
+var gmap_styles_satellite = [{"featureType": "administrative.land_parcel","stylers": [{"visibility": "off"}]},{"featureType": "administrative.neighborhood","stylers": [{"visibility": "off"}]},{"featureType": "poi","elementType": "labels.text","stylers": [{"visibility": "off"}]},
+                   {"featureType": "poi.business","stylers": [{"visibility": "off"}]},{"featureType": "road","stylers": [{"visibility": "off"}]},{"featureType": "road","elementType": "labels","stylers": [{"visibility": "off"}]},
+                   {"featureType": "road","elementType": "labels.icon","stylers": [{"visibility": "off"}]},{"featureType": "road.arterial","stylers": [{"visibility": "off"}]},{"featureType": "road.highway","stylers": [{"visibility": "off"}]},
+                   {"featureType": "road.highway","elementType": "labels","stylers": [{"visibility": "off"}]},{"featureType": "road.local","stylers": [{"visibility": "off"}]},{"featureType": "transit","stylers": [{"visibility": "off"}]},
+                   {"featureType": "water","elementType": "labels.text","stylers": [{"visibility": "off"}]},{"featureType": "poi","elementType": "labels", "stylers": [{"visibility": "off"}]},{"featureType": "transit","elementType": "labels", "stylers": [{"visibility": "off"}]}]
+var gmap_styles_light = [{ "featureType": "administrative.land_parcel", "elementType": "labels", "stylers": [ { "visibility": "off" } ] }, { "featureType": "poi", "elementType": "labels.icon", "stylers": [ { "visibility": "off" } ] }, { "featureType": "poi", "elementType": "labels.text", "stylers": [ { "visibility": "off" } ] }, { "featureType": "road", "elementType": "labels.icon", "stylers": [ { "visibility": "off" } ] }, { "featureType": "road.local", "elementType": "labels", "stylers": [ { "visibility": "on" } ] }, { "featureType": "transit", "stylers": [ { "visibility": "on" } ] }, { "featureType": "transit", "elementType": "labels.icon", "stylers": [ { "visibility": "off" } ] }, { "featureType": "transit.station.airport", "stylers": [ { "visibility": "on" } ] }, { "featureType": "transit.station.airport", "elementType": "labels.icon", "stylers": [ { "visibility": "off" } ] }, { "featureType": "transit.station.airport", "elementType": "labels.text", "stylers": [ { "visibility": "simplified" } ] } ];
+var gmap_styles_dark = [{ "elementType": "geometry", "stylers": [ { "color": "#212121" } ] }, { "elementType": "labels.text.fill", "stylers": [ { "color": "#757575" } ] }, { "elementType": "labels.text.stroke", "stylers": [ { "color": "#212121" } ] }, { "featureType": "administrative", "elementType": "geometry", "stylers": [ { "color": "#373737" } ] }, { "featureType": "administrative.country", "elementType": "geometry", "stylers": [ { "color": "#8f8f8f" } ] }, { "featureType": "administrative.country", "elementType": "labels.text.fill", "stylers": [ { "color": "#9e9e9e" } ] }, { "featureType": "administrative.land_parcel", "stylers": [ { "visibility": "off" } ] }, { "featureType": "administrative.land_parcel", "elementType": "labels", "stylers": [ { "visibility": "off" } ] }, { "featureType": "administrative.locality", "elementType": "labels.text.fill", "stylers": [ { "color": "#bdbdbd" } ] }, { "featureType": "administrative.province", "elementType": "geometry", "stylers": [ { "color": "#585858" } ] }, { "featureType": "landscape.natural.terrain", "stylers": [ { "visibility": "on" } ] }, { "featureType": "poi", "elementType": "labels.icon", "stylers": [ { "visibility": "off" } ] }, { "featureType": "poi", "elementType": "labels.text", "stylers": [ { "visibility": "off" } ] }, { "featureType": "poi", "elementType": "labels.text.fill", "stylers": [ { "color": "#757575" } ] }, { "featureType": "poi.business", "stylers": [ { "visibility": "off" } ] }, { "featureType": "poi.park", "elementType": "geometry", "stylers": [ { "color": "#181818" } ] }, { "featureType": "poi.park", "elementType": "labels.text.fill", "stylers": [ { "color": "#616161" } ] }, { "featureType": "poi.park", "elementType": "labels.text.stroke", "stylers": [ { "color": "#1b1b1b" } ] }, { "featureType": "road", "elementType": "geometry.fill", "stylers": [ { "color": "#2c2c2c" } ] }, { "featureType": "road", "elementType": "labels.icon", "stylers": [ { "visibility": "off" } ] }, { "featureType": "road", "elementType": "labels.text.fill", "stylers": [ { "color": "#8a8a8a" } ] }, { "featureType": "road.arterial", "elementType": "geometry", "stylers": [ { "color": "#373737" } ] }, { "featureType": "road.highway", "elementType": "geometry", "stylers": [ { "color": "#3c3c3c" } ] }, { "featureType": "road.highway.controlled_access", "elementType": "geometry", "stylers": [ { "color": "#4e4e4e" } ] }, { "featureType": "road.local", "elementType": "labels", "stylers": [ { "visibility": "off" } ] }, { "featureType": "road.local", "elementType": "labels.text.fill", "stylers": [ { "color": "#616161" } ] }, { "featureType": "transit", "stylers": [ { "visibility": "on" } ] }, { "featureType": "transit", "elementType": "labels.icon", "stylers": [ { "color": "#cdcdcd" }, { "visibility": "off" } ] }, { "featureType": "transit", "elementType": "labels.text.fill", "stylers": [ { "color": "#757575" } ] }, { "featureType": "transit.line", "elementType": "geometry", "stylers": [ { "color": "#393939" } ] }, { "featureType": "transit.station.airport", "stylers": [ { "visibility": "on" } ] }, { "featureType": "transit.station.airport", "elementType": "geometry", "stylers": [ { "visibility": "on" } ] }, { "featureType": "transit.station.airport", "elementType": "labels.icon", "stylers": [ { "visibility": "off" } ] }, { "featureType": "water", "elementType": "geometry", "stylers": [ { "color": "#2b2b2b" } ] }, { "featureType": "water", "elementType": "labels.text.fill", "stylers": [ { "color": "#3d3d3d" } ] } ]
+
+var startlat;
+var startlon;
+var endlat;
+var endlon;
+var iters;
+var seconds;
+var seconds_true;
+var datarow;
+var trigger_interval;
+var nextstop_interval;
+var updatebaskets_interval;
+var updatemarker_interval;
+var itercheck_interval;
+var ptcountdown_interval;
+var ptcenter_interval;
+var ebarrival_datarow;
+var ebarrival_ts;
+var ebarrival_secdiff;
+var ebarrival_avail = false;
+var ebarrival_interval;
+var ebarrival_showafter;
+
+// https://stackoverflow.com/a/27943
+function haversineCalc(lat1,lon1,lat2,lon2) {
+  var R = 6371; // Radius of the earth in km
+  var dLat = deg2rad(lat2-lat1);  // deg2rad below
+  var dLon = deg2rad(lon2-lon1); 
+  var a = 
+    Math.sin(dLat/2) * Math.sin(dLat/2) +
+    Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * 
+    Math.sin(dLon/2) * Math.sin(dLon/2)
+    ; 
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+  var d = R * c; // Distance in km
+  return d;
+}
+
+function deg2rad(deg) {
+  return deg * (Math.PI/180)
+}
+
+function roundHalf(num) { 
+  return (Math.round(num*2)/2).toFixed(1); 
+}
+
+function ebarrival_calculate() {
+  $.getJSON(geoapi_url + "?key=" + geoapi_key, ebarrival_calculate_callback)
+}
+
+function ebarrival_calculate_callback(json) {
+  try {
+    var ll_response = JSON.parse(JSON.stringify(json))
+    ebarrival_lat = ll_response['data']['lat']
+    ebarrival_lng = ll_response['data']['lng']
+    $("#geoapi-unavailwarn").hide()
+    geoapi_accuracy = ll_response['data']['accuracy'] * 5
+    if (geoapi_accuracy > 300) {
+      geoapi_accuracy = 300
+    }
+    geoapi_avail = true
+  } catch (e) {
+    geoapi_failed = true
+    return
+  }
+
+  updateDFYmetric()
+  var closestdistance = 9999999;
+  var closestdistance_dr = 0;
+
+  for (var i = parseInt(pt_endrow) + 1; i <= endrow; i++) {
+    var stoplat = routedata['destinations'][i.toString()]['lat']
+    var stoplng = routedata['destinations'][i.toString()]['lng']
+    var distance = haversineCalc(stoplat, stoplng, ebarrival_lat, ebarrival_lng)
+    if (distance <= closestdistance) {
+      closestdistance = distance
+      closestdistance_dr = i
+    }
+  }
+
+  ebarrival_datarow = closestdistance_dr
+  ebarrival_ts = routedata['destinations'][closestdistance_dr.toString()]['unixarrival']
+
+  ts = (new Date().getTime()) / 1000;
+  ebarrival_secdiff = ebarrival_ts - ts;
+  var hours = ebarrival_secdiff / 3600;
+  var hours_rounded = roundHalf(hours);
+  var hours_rounded_int = parseInt(hours_rounded)
+  var hours_rounded_str = hours_rounded.toString()
+  var minutes = ebarrival_secdiff / 60;
+  var minutes_rounded = roundHalf(minutes)
+  var minutes_rounded_int = parseInt(minutes_rounded)
+  var minutes_rounded_str = minutes_rounded.toString()
+
+  if (ebarrival_secdiff <= -600) {
+    $("#ebarrivaltext_small").html(ebarrivaltext)
+    return
+  }
+
+  if (ebarrival_secdiff <= 600 && ebarrival_secdiff > -600) {
+    $("#ebarrival_small_html").html("The Easter Bunny has arrived in your area!")
+    return
+  }
+
+  if (hours_rounded >= 1 && minutes >= 52.5) {
+    if (hours_rounded == 1) {
+      $("#ebarrival_small_html").html("The Easter Bunny will arrive in about " + hours_rounded_int + " hour.")
+    } else {
+      if (hours_rounded_str.substring(hours_rounded_str.indexOf(".")) == ".5") {
+      $("#ebarrival_small_html").html("The Easter Bunny will arrive in about " + hours_rounded_int + "½ hours.")
+    } else {
+      $("#ebarrival_small_html").html("The Easter Bunny will arrive in about " + hours_rounded_int + " hours.")
+    }
+    }
+  } else {
+    if (minutes >= 37.5 && minutes < 52.5) {
+      $("#ebarrival_small_html").html("The Easter Bunny will arrive in about 45 minutes.")
+    } else if (minutes >= 22.5 && minutes < 37.5) {
+      $("#ebarrival_small_html").html("The Easter Bunny will arrive in about 30 minutes.")
+    } else {
+      $("#ebarrival_small_html").html("The Easter Bunny will arrive shortly!")
+    }
+  }
+
+  ebarrival_avail = true
+  ebarrival_loaded = true
+  ebarrival_interval = setInterval(ebarrival_interval, 60000)
+
+}
+
+function ebarrival_updatetime() {
+  if (ebarrival_loaded == false || ebarrival_avail == false) {
+    return
+  }
+  ts = (new Date().getTime()) / 1000;
+  ebarrival_secdiff = ebarrival_ts - ts;
+  var hours = ebarrival_secdiff / 3600;
+  var hours_rounded = roundHalf(hours);
+  var hours_rounded_int = parseInt(hours_rounded)
+  var hours_rounded_str = hours_rounded.toString()
+  var minutes = ebarrival_secdiff / 60;
+  var minutes_rounded = roundHalf(minutes)
+  var minutes_rounded_int = parseInt(minutes_rounded)
+  var minutes_rounded_str = minutes_rounded.toString()
+
+  if (ebarrival_secdiff <= -600) {
+    $("#ebarrival_small_html").html("")
+    $("#ebarrivaltext_small").html(ebarrivaltext)
+    // Turning off hiding here as precise location going on/off can trigger the secdiff to go from under -600 to over -600
+    //$("#ebarrival_small").hide()
+    return
+  }
+
+  // Need to experiment and see if a 15min diff or a 10min diff works best.
+  if (ebarrival_secdiff <= 600 && ebarrival_secdiff > -600) {
+    $("#ebarrival_small_html").html("The Easter Bunny has arrived in your area!")
+    return
+  }
+
+  if (hours_rounded >= 1 && minutes >= 52.5) {
+    if (hours_rounded == 1) {
+      $("#ebarrival_small_html").html("The Easter Bunny will arrive in about " + hours_rounded_int + " hour.")
+    } else {
+      if (hours_rounded_str.substring(hours_rounded_str.indexOf(".")) == ".5") {
+      $("#ebarrival_small_html").html("The Easter Bunny will arrive in about " + hours_rounded_int + "½ hours.")
+    } else {
+      $("#ebarrival_small_html").html("The Easter Bunny will arrive in about " + hours_rounded_int + " hours.")
+    }
+    }
+  } else {
+    if (minutes >= 37.5 && minutes < 52.5) {
+      $("#ebarrival_small_html").html("The Easter Bunny will arrive in about 45 minutes.")
+    } else if (minutes >= 22.5 && minutes < 37.5) {
+      $("#ebarrival_small_html").html("The Easter Bunny will arrive in about 30 minutes.")
+    } else {
+      $("#ebarrival_small_html").html("The Easter Bunny will arrive shortly!")
+    }
+  }
+}
+
+function callback(json) {
+  if (json == "Request timed out") {
+    $("#nextstop").html("Failed to load data. Try refreshing the page.")
+    return
+  }
+  routedata = JSON.parse(JSON.stringify(json))
+  ts = (new Date().getTime()) / 1000;
+  for (var i = 0; i <= endrow; i++) {
+    if (routedata['destinations'][i.toString()]['unixarrival'] < ts) {
+      continue;
+    } else {
+      break;
+    }
+  }
+  // Datarow is offset by 1 here - Meaning 1 as the datarow in reality would be the first index of the route data file (0)
+  datarow = i
+  // Handle if tracking is done.
+  if (datarow == endrow_plusone) {
+    tracking_over = true
+    $(function() {
+      $("#centerbutton").hide()
+      $("#centerbutton-text").hide()
+      $("#ebarrival_small").hide()
+      $("#ebarrival_small_html").html("")
+      $("#ebarrivaltext_small").html(ebarrivaltext_over)
+      $("#geoapi-unavailwarn").hide()
+      $("#mapzl-span").html(zltext_after)
+    })
+    ebarrival_calculate()
+    laststop = routedata['destinations'][(datarow - 1).toString()]['city'] + ', ' + routedata['destinations'][(datarow - 1).toString()]['region']
+    nextstop = "The Easter Bunny has completed his journey. Thank you for tracking with us!"
+    var baskets = routedata['destinations'][(datarow - 1).toString()]['eggsdelivered']
+    var carrots = routedata['destinations'][(datarow - 1).toString()]['carrotseaten']
+    var distancetravelled = routedata['destinations'][(datarow - 1).toString()]['distance-km']
+    document.getElementById("lastseen").innerHTML = laststop
+    document.getElementById("nextstop").innerHTML = nextstop
+    updateBDmetric(baskets)
+    updateCEmetric(carrots)
+    updateDTmetric(distancetravelled)
+    updateSPmetric(0)
+
+    initMap()
+  } else {
+  // Handle if we're in PT by showing the PT row and hiding the main row.
+  // Function to do so is encased in a DOM ready function to avoid issues. (it still runs after the DOM is ready)
+  if (routedata['destinations'][(datarow - 1).toString()]['region'] == "pt") {
+    if (pt_state == false) {
+      pt_state = true;
+      $(function() {
+        $("#mainrow").prop("hidden", true)
+        $("#ptrow").prop("hidden", false)
+      })
+    }
+  }
+  route_ready = true;
+  initMap()
+  // If we're not handling post-tracking run the usual stuff - No PT
+  if (pt_state == false) {
+    startlat = routedata['destinations'][(datarow - 1).toString()]['lat']
+    startlon = routedata['destinations'][(datarow - 1).toString()]['lng']
+    endlat = routedata['destinations'][datarow.toString()]['lat']
+    endlon = routedata['destinations'][datarow.toString()]['lng']
+    diffLat = endlat - startlat;
+    diffLng = endlon - startlon;
+    if (diffLng > 200) {
+      diffLng = diffLng - 360;
+    } else if (diffLng < -200) {
+      diffLng = diffLng + 360
+    }
+    iters = (Math.floor((new Date().getTime()) / 1000) - routedata['destinations'][(datarow - 1).toString()]['unixarrival'])
+    var iters_unrounded = (new Date().getTime()) / 1000 - routedata['destinations'][(datarow - 1).toString()]['unixarrival']
+    document.getElementById("lastseen").innerHTML = laststop
+    if (iters == 0 && datarow - 1 != pt_endrow) {
+      laststop = routedata['destinations'][(datarow - 2).toString()]['city'] + ', ' + routedata['destinations'][(datarow - 2).toString()]['region']
+      nextstop = routedata['destinations'][(datarow - 1).toString()]['city'] + ', ' + routedata['destinations'][(datarow - 1).toString()]['region']
+      setTimeout(function() {
+        laststop = routedata['destinations'][(datarow - 1).toString()]['city'] + ', ' + routedata['destinations'][(datarow - 1).toString()]['region']
+        document.getElementById("lastseen").innerHTML = laststop
+        nextstop = routedata['destinations'][(datarow).toString()]['city'] + ', ' + routedata['destinations'][(datarow).toString()]['region']
+      }, (1 - iters_unrounded) * 1000)
+    } else {
+      laststop = routedata['destinations'][(datarow - 1).toString()]['city'] + ', ' + routedata['destinations'][(datarow - 1).toString()]['region']
+      nextstop = routedata['destinations'][(datarow).toString()]['city'] + ', ' + routedata['destinations'][(datarow).toString()]['region']
+    }
+    seconds = routedata['destinations'][datarow.toString()]['unixarrival'] - routedata['destinations'][(datarow - 1).toString()]['unixarrival']
+    document.getElementById("lastseen").innerHTML = laststop
+    var duration_mins = Math.floor((seconds - iters) / 60)
+    var duration_secs = (seconds - iters) - (duration_mins * 60)
+    var duration_secs_raw = (seconds - iters)
+    startBaskets = routedata['destinations'][(datarow - 1).toString()]['eggsdelivered']
+    endBaskets = routedata['destinations'][(datarow).toString()]['eggsdelivered']
+    basketsDiff = endBaskets - startBaskets
+    startCarrots = routedata['destinations'][(datarow - 1).toString()]['carrotseaten']
+    endCarrots = routedata['destinations'][(datarow).toString()]['carrotseaten']
+    carrotsDiff = endCarrots - startCarrots
+    startDistance = routedata['destinations'][(datarow - 1).toString()]['distance-km']
+    endDistance = routedata['destinations'][(datarow).toString()]['distance-km']
+    distanceDiff = endDistance - startDistance
+    speed = routedata['destinations'][(datarow - 1).toString()]['speed-kph']
+    baskets = Math.round(startBaskets + (basketsDiff * (iters_unrounded / seconds)))
+    carrots = Math.round(startCarrots + (carrotsDiff * (iters_unrounded / seconds)))
+    distancetravelled = startDistance + (distanceDiff * (iters_unrounded / seconds))
+    updateBDmetric(baskets)
+    updateCEmetric(carrots)
+    updateDTmetric(distancetravelled)
+    updateSPmetric(speed)
+
+    if (iters == 0 && datarow - 1 != pt_endrow) {
+      document.getElementById("nextstop").innerHTML = nextstop + " in 0 seconds"
+    } else if (duration_secs_raw < 60) {
+      if (duration_secs == 1) {
+        document.getElementById("nextstop").innerHTML = nextstop + " in " + duration_secs + " second"
+      } else {
+        document.getElementById("nextstop").innerHTML = nextstop + " in " + duration_secs + " seconds"
+      }
+    } else {
+      if (duration_mins == 1 && duration_secs == 1) {
+        document.getElementById("nextstop").innerHTML = nextstop + " in " + duration_mins + " minute, " + duration_secs + " second"
+      } else if (duration_mins == 1) {
+        document.getElementById("nextstop").innerHTML = nextstop + " in " + duration_mins + " minute, " + duration_secs + " seconds"
+      } else if (duration_secs == 1){
+        document.getElementById("nextstop").innerHTML = nextstop + " in " + duration_mins + " minutes, " + duration_secs + " second"
+    } else {
+      document.getElementById("nextstop").innerHTML = nextstop + " in " + duration_mins + " minutes, " + duration_secs + " seconds"
+    }
+  }
+    ebarrival_showafter = true
+    ebarrival_calculate()
+    itercheck_interval = setInterval(monitorIters, 40)
+    nextstop_interval = setInterval(updateNextStop, 100)
+    updatebaskets_interval = setInterval(updateBaskets, 200)
+    updatemarker_interval = setInterval(updateMarker, 1000)
+    sleepDetect_interval = setInterval(sleepDetect, 1000)
+   } else {
+    // PT ready code to run.
+    var message = routedata['destinations'][(datarow - 1).toString()]['city']
+    seconds = routedata['destinations'][datarow.toString()]['unixarrival'] - routedata['destinations'][(datarow - 1).toString()]['unixarrival']
+    document.getElementById("lastseen-pt").innerHTML = message
+    var timediff = routedata['destinations'][(datarow).toString()]['unixarrival'] - ts
+    var timeleft = routedata['destinations'][pt_endrow]['unixarrival'] - ts
+    var hours = Math.floor(timeleft / 3600) % 24;
+    timeleft -= hours * 3600;
+    var minutes = Math.floor(timeleft / 60) % 60;
+    timeleft -= minutes * 60;
+    var seconds_countdown = Math.floor(timeleft % 60);
+
+    if (0 <= minutes && minutes <= 9) {
+      minutes = "0" + minutes
+    }
+
+    if (0 <= seconds_countdown && seconds_countdown <= 9) {
+      seconds_countdown = "0" + seconds_countdown
+    }
+
+    $(function() {
+      $("#centerbutton").hide()
+      $("#centerbutton-text").hide()
+      $("#ebarrival_small").hide()
+      $("#mapzl-span").html(zltext_pt)
+    })
+    
+    document.getElementById("countdown-pt").innerHTML = hours + ":" + minutes + ":" + seconds_countdown
+    document.getElementById("ebliftoff_small_html").innerHTML = hours + ":" + minutes + ":" + seconds_countdown
+    ebarrival_showafter = false
+    ebarrival_calculate()
+    itercheck_interval = setInterval(monitorIters, 40)
+    sleepDetect_interval = setInterval(sleepDetect, 1000)
+    ptcountdown_interval = setInterval(ptcountdown, 100)
+    ptcenter_interval = setInterval(ptcenter, 1000)
+  }
+  }
+}
+
+var map;
+var mapov;
+var bunnyMarker;
+
+function resetMap(forcedoption) {
+  if (mapCentered == true || forcedoption == true) {
+   mapCentered = false;
+   document.getElementById("alertbottom_message").innerHTML = "Map is now uncentered on the Easter Bunny."
+   $("#centericon").attr("title", "Click to recenter the map on the Easter Bunny")
+   $("#centericon").attr("aria-label", "Click to recenter the map on the Easter Bunny")
+   $("#center-abouttext").html("recenter the map on the Easter Bunny, once you're done exploring the map freely.")
+   $("#aboutmodal-ci").prop("alt", "Center Easter Bunny")
+   $("#aboutmodal-ci").prop("title", "Center Easter Bunny")
+   $("#aboutmodal-ci").prop("aria-label", "Center Easter Bunny")
+   if (appearance == "dark" || ((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) && appearance == "automatic")) {
+    $(".center-icon").css("background-image", "url('/assets/icons/bunnycenter-dark.png')")
+    $(".center-icon-dyn").css("background-image", "url('/assets/icons/bunnycenter-light.png')")
+  } else if (appearance == "light" || (!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) && appearance == "automatic")) {
+    $(".center-icon").css("background-image", "url('/assets/icons/bunnycenter-dark.png')")
+    $(".center-icon-dyn").css("background-image", "url('/assets/icons/bunnycenter-dark.png')")
+  }
+   $('#alertbottom').stop(true, true);
+   $("#alertbottom").fadeTo(5000, 500).fadeOut(500, function(){
+           $("#alertbottom").fadeOut(500);
+            });
+
+   } else if (mapCentered == false || forcedoption == false) {
+   mapCentered = true;
+   var lat_resetMap = startlat + (diffLat * (iters / seconds))
+   var lng_resetMap = startlon + (diffLng * (iters / seconds))
+   var newLatLng = new google.maps.LatLng(lat_resetMap, lng_resetMap)
+   var proj = mapov.getProjection();
+   var offpoint = proj.fromLatLngToContainerPixel(newLatLng);
+   offpoint.y = offpoint.y - pxoffset;
+   map.setCenter(proj.fromContainerPixelToLatLng(offpoint))
+   map.setZoom(tracking_zl)
+   document.getElementById("alertbottom_message").innerHTML = "Map is now centered on the Easter Bunny."
+   $("#centericon").attr("title", "Click to uncenter the map on the Easter Bunny")
+   $("#centericon").attr("aria-label", "Click to recenter the map on the Easter Bunny")
+   $("#center-abouttext").html("uncenter the map on the Easter Bunny, so you can explore the map freely.")
+   $("#aboutmodal-ci").prop("alt", "Uncenter Easter Bunny")
+   $("#aboutmodal-ci").prop("title", "Uncenter Easter Bunny")
+   $("#aboutmodal-ci").prop("aria-label", "Uncenter Easter Bunny")
+   if (appearance == "dark" || ((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) && appearance == "automatic")) {
+    $(".center-icon").css("background-image", "url('/assets/icons/bunnyuncenter-dark.png')")
+    $(".center-icon-dyn").css("background-image", "url('/assets/icons/bunnyuncenter-light.png')")
+  } else if (appearance == "light" || (!(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) && appearance == "automatic")) {
+    $(".center-icon").css("background-image", "url('/assets/icons/bunnyuncenter-dark.png')")
+    $(".center-icon-dyn").css("background-image", "url('/assets/icons/bunnyuncenter-dark.png')")
+  }
+   $('#alertbottom').stop(true, true);
+   $("#alertbottom").fadeTo(5000, 500).fadeOut(500, function(){
+           $("#alertbottom").fadeOut(500);
+            });
+}
+  $("#centericon").blur()
+  $("#centerbutton").blur()
+}
+
+  function initMap() {
+    if (gmaps_avail == false) {
+      setTimeout(initMap, 20)
+      return;
+    }
+    var maplat;
+    var maplng;
+    var ts = (new Date().getTime()) / 1000;
+    for (var i = 0; i <= endrow; i++) {
+      if (routedata['destinations'][i.toString()]['unixarrival'] < ts) {
+        continue;
+      } else {
+        break;
+      }
+    }
+    var datarow = i
+    if (datarow == endrow_plusone) {
+      var endlat_initMap = routedata['destinations'][(datarow - 1).toString()]['lat']
+      var endlon_initMap = routedata['destinations'][(datarow - 1).toString()]['lng']
+      maplat = endlat_initMap;
+      maplng = endlon_initMap;
+    } else {
+      var startlat_initMap = routedata['destinations'][(datarow - 1).toString()]['lat']
+      var startlon_initMap = routedata['destinations'][(datarow - 1).toString()]['lng']
+      endlat_initMap = routedata['destinations'][datarow.toString()]['lat']
+      endlon_initMap = routedata['destinations'][datarow.toString()]['lng']
+      var diffLat_initMap = endlat_initMap - startlat_initMap;
+      var diffLng_initMap = endlon_initMap - startlon_initMap;
+      if (diffLng_initMap > 200) {
+        diffLng_initMap = diffLng_initMap - 360;
+      } else if (diffLng_initMap < -200) {
+        diffLng_initMap = diffLng_initMap + 360
+      }
+      var timediff_initMap = routedata['destinations'][datarow.toString()]['unixarrival'] - routedata['destinations'][(datarow - 1).toString()]['unixarrival']
+      var seconds_initMap = ((new Date().getTime()) / 1000) - routedata['destinations'][(datarow - 1).toString()]['unixarrival']
+      maplat = startlat_initMap + (diffLat_initMap * (seconds_initMap / timediff_initMap))
+      maplng = startlon_initMap + (diffLng_initMap * (seconds_initMap / timediff_initMap))
+    }
+    var zoomlevel_initMap = 6;
+
+    var map_settings = {
+      center: {lat: maplat, lng: maplng},
+      zoomControl: true,
+      zoomControlOptions: {
+        position: google.maps.ControlPosition.LEFT_RIGHT,
+      },
+      mapTypeControl: false,
+      scaleControl: false,
+      streetViewControl: false,
+      rotateControl: false,
+      fullscreenControl: false,
+      tilt: 0
+    }
+
+    if (datarow < endrow_plusone && pt_state == false) {
+      map_settings.zoom = tracking_zl
+    } else {
+      map_settings.zoom = 3
+    }
+
+    if (mapmode == "street") {
+      map_settings.mapTypeId = google.maps.MapTypeId.ROADMAP
+      if (appearance == "dark" || ((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) && appearance == "automatic")) {
+        map_settings.styles = gmap_styles_dark
+      } else {
+        map_settings.styles = gmap_styles_light
+      }
+    } else if (mapmode == "satellite") {
+      map_settings.mapTypeId = google.maps.MapTypeId.SATELLITE
+      map_settings.styles = gmap_styles_satellite
+    } else if (mapmode == "hybrid") {
+      map_settings.mapTypeId = google.maps.MapTypeId.HYBRID
+      map_settings.styles = gmap_styles_satellite
+    }
+
+    map = new google.maps.Map(document.getElementById('map'), map_settings);
+    mapov = new google.maps.OverlayView();
+    mapov.onAdd = function () {}
+    mapov.draw = function () {}
+    mapov.setMap(map)
+
+    if ((window_orientation == 90 || window_orientation == -90) && window.innerHeight < 500) {
+      pxoffset = window.innerHeight * 0.33;
+      map.panBy(0, -pxoffset);
+    } else if (window_orientation == 0 && window.innerHeight < 500 && window.innerHeight < window.innerWidth) {
+      // Handle Chrome edge case
+      pxoffset = window.innerHeight * 0.33;
+      map.panBy(0, -pxoffset);
+    }
+    var bunny_icon = {
+      url: "/assets/icons/bunny-120.png",
+      scaledSize: new google.maps.Size(60, 60)
+    }
+
+    var basket_icon = {
+      url: "/assets/icons/basket-96.png",
+      scaledSize: new google.maps.Size(24, 24)
+    }
+
+    var iss_icon = {
+      url: "/assets/icons/iss-96-3.png",
+      scaledSize: new google.maps.Size(24, 24)
+    }
+
+    var marker_options = {
+      position: {lat: maplat, lng: maplng},
+      map: map,
+      icon: bunny_icon,
+      clickable: false,
+      zIndex: 900
+    }
+
+    if (bunnybounce == "on" && datarow < endrow_plusone && pt_state == false) {
+      marker_options.animation = google.maps.Animation.BOUNCE
+    }
+
+    bunnyMarker = new google.maps.Marker(marker_options)
+
+    updateDFYmetric()
+
+    if (datarow == endrow_plusone || pt_state == true) {
+      $("#centerbutton").hide()
+      $("#centerbutton-text").hide()
+    }
+
+    for (i = 0; i < datarow; i++) {
+      if (routedata['destinations'][i.toString()]['city'] == home_stop || routedata['destinations'][i.toString()]['region'] == "pt") {
+        continue
+      }
+
+      var unixstamp = new Date(routedata['destinations'][i.toString()]['unixarrival'] * 1000)
+      var momentobj = moment(routedata['destinations'][i.toString()]['unixarrival'] * 1000)
+      var timestring = momentobj.format("LL, LT")
+
+      var local_abbr = moment.tz.guess(true);
+      var local_abbrv = moment.tz.zone(local_abbr).abbr(unixstamp);
+
+      var marker;
+      
+      if (routedata['destinations'][i.toString()]['city'] == "International Space Station") {
+        marker = new google.maps.Marker({
+          position: {lat: routedata['destinations'][i.toString()]['lat'], lng: routedata['destinations'][i.toString()]['lng']},
+          map: map,
+          title: routedata['destinations'][i.toString()]['city'] + ", " + routedata['destinations'][i.toString()]['region'] + "\nArrived: " + timestring + " " + local_abbrv + "\n" + "For more info, click on this basket!",
+          icon: iss_icon,
+          zIndex: i
+        })
+      } else {
+        marker = new google.maps.Marker({
+          position: {lat: routedata['destinations'][i.toString()]['lat'], lng: routedata['destinations'][i.toString()]['lng']},
+          map: map,
+          title: routedata['destinations'][i.toString()]['city'] + ", " + routedata['destinations'][i.toString()]['region'] + "\nArrived: " + timestring + " " + local_abbrv + "\n" + "For more info, click on this basket!",
+          icon: basket_icon,
+          zIndex: i
+        })
+      }
+
+      google.maps.event.addListener(marker, 'click', (function (marker, i) {
+        return function() {
+          renderesd((i).toString())
+        }
+      })(marker, i))
+    }
+  }
+
+// Code for when the page comes into and out of view to make sure that our iterations are where they need to be
+
+function vischange() {
+  var old_datarow = datarow;
+  ts = (new Date().getTime()) / 1000;
+  try {
+  for (var i = 0; i <= endrow; i++) {
+    if (routedata['destinations'][i.toString()]['unixarrival'] < ts) {
+      continue;
+    } else {
+      break;
+    }
+  }
+} catch (e) {
+  // Catch an error if vischange is triggered before route data is loaded in.
+  return
+}
+  
+  datarow = i
+  // Handle if tracking is done.
+  // Handle placing baskets
+  var basket_icon = {
+        url: "/assets/icons/basket-96.png",
+        scaledSize: new google.maps.Size(24, 24)
+  }
+
+  var iss_icon = {
+        url: "/assets/icons/iss-96-3.png",
+        scaledSize: new google.maps.Size(24, 24)
+  }
+  if (datarow - old_datarow > 0) {
+    for (var j = old_datarow; j < datarow; j++) {
+      if (routedata['destinations'][j.toString()]['city'] == home_stop || routedata['destinations'][j.toString()]['region'] == "pt") {
+        continue
+      }
+
+      // If we lag behind by more than 1 stop, then undisable the ESD step forward.
+      if ($("#esd-stepforward").prop("disabled") == true) {
+        $("#esd-stepforward").prop("disabled", false)
+      }
+
+      var unixstamp = new Date(routedata['destinations'][j.toString()]['unixarrival'] * 1000)
+      var momentobj = moment(routedata['destinations'][j.toString()]['unixarrival'] * 1000)
+      var timestring = momentobj.format("LL, LT")
+
+      var local_abbr = moment.tz.guess(true);
+      var local_abbrv = moment.tz.zone(local_abbr).abbr(unixstamp);
+      
+      var marker;
+
+      if (routedata['destinations'][j.toString()]['city'] == "International Space Station") {
+        marker = new google.maps.Marker({
+          position: {lat: routedata['destinations'][j.toString()]['lat'], lng: routedata['destinations'][j.toString()]['lng']},
+          map: map,
+          title: routedata['destinations'][j.toString()]['city'] + ", " + routedata['destinations'][j.toString()]['region'] + "\nArrived: " + timestring + " " + local_abbrv + "\n" + "For more info, click on this basket!",
+          icon: iss_icon,
+          zIndex: j
+        })
+      } else {
+          marker = new google.maps.Marker({
+          position: {lat: routedata['destinations'][j.toString()]['lat'], lng: routedata['destinations'][j.toString()]['lng']},
+          map: map,
+          title: routedata['destinations'][j.toString()]['city'] + ", " + routedata['destinations'][j.toString()]['region'] + "\nArrived: " + timestring + " " + local_abbrv + "\n" + "For more info, click on this basket!",
+          icon: basket_icon,
+          zIndex: j
+        })
+      }
+
+      google.maps.event.addListener(marker, 'click', (function (marker, j) {
+          return function() {
+            renderesd((j).toString())
+          }
+        })(marker, j))
+
+    }
+  }
+  if (datarow == endrow_plusone) {
+    tracking_over = true
+    if (pt_state == true) {
+      $("#mainrow").prop("hidden", false)
+      $("#ptrow").prop("hidden", true)
+      clearInterval(ptcenter_interval)
+      clearInterval(ptcountdown_interval)
+    }
+    pt_state = false
+    clearInterval(trigger_interval)
+    clearInterval(updatemarker_interval)
+    clearInterval(updatebaskets_interval)
+    clearInterval(nextstop_interval)
+    clearInterval(itercheck_interval)
+    clearInterval(ebarrival_interval)
+    $("#centerbutton").hide()
+    $("#centerbutton-text").hide()
+    $("#ebarrival_small").hide()
+    $("#ebarrival_small_html").html("")
+    $("#ebarrivaltext_small").html(ebarrivaltext_over)
+    $("#mapzl-span").html(zltext_after)
+    $("#geoapi-unavailwarn").hide()
+    bunnyMarker.setAnimation()
+    endlat = routedata['destinations'][(datarow - 1).toString()]['lat']
+    endlon = routedata['destinations'][(datarow - 1).toString()]['lng']
+    laststop = routedata['destinations'][(datarow - 1).toString()]['city'] + ', ' + routedata['destinations'][(datarow - 1).toString()]['region']
+    nextstop = "The Easter Bunny has completed his journey. Thank you for tracking with us!"
+    var baskets = routedata['destinations'][(datarow - 1).toString()]['eggsdelivered']
+    var carrots = routedata['destinations'][(datarow - 1).toString()]['carrotseaten']
+    var distance = routedata['destinations'][(datarow - 1).toString()]['distance-km']
+    speed = routedata['destinations'][(datarow - 1).toString()]['speed-kph']
+    google.maps.event.removeListener(clickListener);
+    if (datarow - old_datarow > 0) {
+      var newLatLng = new google.maps.LatLng(endlat, endlon)
+      var proj = mapov.getProjection();
+      var offpoint = proj.fromLatLngToContainerPixel(newLatLng);
+      offpoint.y = offpoint.y - pxoffset;
+      map.setCenter(proj.fromContainerPixelToLatLng(offpoint))
+      map.setZoom(3)
+    }
+    newLatLng = new google.maps.LatLng(endlat, endlon)
+    bunnyMarker.setPosition(newLatLng)
+    document.getElementById("lastseen").innerHTML = laststop
+    document.getElementById("nextstop").innerHTML = nextstop
+    updateBDmetric(baskets)
+    updateCEmetric(carrots)
+    updateDTmetric(distance)
+    updateSPmetric(0)
+    updateDFYmetric()
+  } else {
+  // Determine if we have exited PT state
+  var ptstate_switch = false;
+  if (routedata['destinations'][(datarow - 1).toString()]['region'] != "pt" && pt_state == true) {
+    pt_state = false;
+    ptstate_switch = true;
+    $("#mainrow").prop("hidden", false)
+    $("#ptrow").prop("hidden", true)
+    $("#mapzl-span").html(zltext_during)
+    $("#centerbutton").show()
+    $("#centerbutton-text").show()
+    if (bunnybounce == "on") {
+        bunnyMarker.setAnimation(google.maps.Animation.BOUNCE)
+    }
+
+    if (ebarrival == "on" && ebarrival_avail == true) {
+      $("#ebarrival_small").show()
+    }
+
+    map.setZoom(tracking_zl)
+    clearInterval(ptcenter_interval)
+    clearInterval(ptcountdown_interval)
+
+  }
+  // If we're not handling post-tracking run the usual stuff
+  if (pt_state == false) {
+    ebarrival_updatetime()
+    startlat = routedata['destinations'][(datarow - 1).toString()]['lat']
+    startlon = routedata['destinations'][(datarow - 1).toString()]['lng']
+    endlat = routedata['destinations'][datarow.toString()]['lat']
+    endlon = routedata['destinations'][datarow.toString()]['lng']
+    diffLat = endlat - startlat;
+    diffLng = endlon - startlon;
+    if (diffLng > 200) {
+      diffLng = diffLng - 360;
+    } else if (diffLng < -200) {
+      diffLng = diffLng + 360
+    }
+    var iters_unround = (new Date().getTime()) / 1000 - routedata['destinations'][(datarow - 1).toString()]['unixarrival']
+    iters = Math.floor((new Date().getTime()) / 1000) - routedata['destinations'][(datarow - 1).toString()]['unixarrival']
+    if (iters == 0) {
+      laststop = routedata['destinations'][(datarow - 2).toString()]['city'] + ', ' + routedata['destinations'][(datarow - 2).toString()]['region']
+      nextstop = routedata['destinations'][(datarow - 1).toString()]['city'] + ', ' + routedata['destinations'][(datarow - 1).toString()]['region']
+      setTimeout(function() {
+        laststop = routedata['destinations'][(datarow - 1).toString()]['city'] + ', ' + routedata['destinations'][(datarow - 1).toString()]['region']
+        document.getElementById("lastseen").innerHTML = laststop
+        nextstop = routedata['destinations'][(datarow).toString()]['city'] + ', ' + routedata['destinations'][(datarow).toString()]['region']
+      }, (1 - iters_unround) * 1000)
+    } else {
+      laststop = routedata['destinations'][(datarow - 1).toString()]['city'] + ', ' + routedata['destinations'][(datarow - 1).toString()]['region']
+      nextstop = routedata['destinations'][(datarow).toString()]['city'] + ', ' + routedata['destinations'][(datarow).toString()]['region']
+    }
+
+    seconds = routedata['destinations'][datarow.toString()]['unixarrival'] - routedata['destinations'][(datarow - 1).toString()]['unixarrival']
+    document.getElementById("lastseen").innerHTML = laststop
+    var duration_mins = Math.floor((seconds - iters) / 60)
+    var duration_secs = (seconds - iters) - (duration_mins * 60)
+    var duration_secs_raw = (seconds - iters)
+    startBaskets = routedata['destinations'][(datarow - 1).toString()]['eggsdelivered']
+    endBaskets = routedata['destinations'][(datarow).toString()]['eggsdelivered']
+    startCarrots = routedata['destinations'][(datarow - 1).toString()]['carrotseaten']
+    endCarrots = routedata['destinations'][(datarow).toString()]['carrotseaten']
+    startDistance = routedata['destinations'][(datarow - 1).toString()]['distance-km']
+    endDistance = routedata['destinations'][(datarow).toString()]['distance-km']
+    speed = routedata['destinations'][(datarow - 1).toString()]['speed-kph']
+    basketsDiff = endBaskets - startBaskets
+    carrotsDiff = endCarrots - startCarrots
+    distanceDiff = endDistance - startDistance
+
+    baskets = Math.round(startBaskets + (basketsDiff * (iters_unround / seconds)))
+    carrots = Math.round(startCarrots + (carrotsDiff * (iters_unround / seconds)))
+    distance = startDistance + (distanceDiff * (iters_unround / seconds))
+    updateBDmetric(baskets)
+    updateCEmetric(carrots)
+    updateDTmetric(distance)
+    updateSPmetric(speed)
+    updateDFYmetric()
+    
+    if (iters == 0) {
+      document.getElementById("nextstop").innerHTML = nextstop + " in 0 seconds"
+    } else if (duration_secs_raw < 60) {
+        if (duration_secs == 1) {
+        document.getElementById("nextstop").innerHTML = nextstop + " in " + duration_secs + " second"
+      } else {
+        document.getElementById("nextstop").innerHTML = nextstop + " in " + duration_secs + " seconds"
+      }
+
+    } else {
+      if (duration_mins == 1 && duration_secs == 1) {
+        document.getElementById("nextstop").innerHTML = nextstop + " in " + duration_mins + " minute, " + duration_secs + " second"
+      } else if (duration_mins == 1) {
+        document.getElementById("nextstop").innerHTML = nextstop + " in " + duration_mins + " minute, " + duration_secs + " seconds"
+      } else if (duration_secs == 1){
+        document.getElementById("nextstop").innerHTML = nextstop + " in " + duration_mins + " minutes, " + duration_secs + " second"
+    } else {
+      document.getElementById("nextstop").innerHTML = nextstop + " in " + duration_mins + " minutes, " + duration_secs + " seconds"
+    }
+    }
+
+    if (ptstate_switch == true) {
+      if (bunnybounce == "on") {
+        bunnyMarker.setAnimation(google.maps.Animation.BOUNCE)
+      }
+      nextstop_interval = setInterval(updateNextStop, 100)
+      updatebaskets_interval = setInterval(updateBaskets, 200)
+      updatemarker_interval = setInterval(updateMarker, 1000)
+      updateMarker()
+    }
+  } else {
+    var message = routedata['destinations'][(datarow - 1).toString()]['city']
+    seconds = routedata['destinations'][datarow.toString()]['unixarrival'] - routedata['destinations'][(datarow - 1).toString()]['unixarrival']
+    document.getElementById("lastseen-pt").innerHTML = message
+    var timediff = routedata['destinations'][(datarow).toString()]['unixarrival'] - ts
+    var timeleft = routedata['destinations'][pt_endrow]['unixarrival'] - ts
+    var hours = Math.floor(timeleft / 3600) % 24;
+    timeleft -= hours * 3600;
+    var minutes = Math.floor(timeleft / 60) % 60;
+    timeleft -= minutes * 60;
+    var seconds_countdown = Math.floor(timeleft % 60);
+
+    if (0 <= minutes && minutes <= 9) {
+      minutes = "0" + minutes
+    }
+
+    if (0 <= seconds_countdown && seconds_countdown <= 9) {
+      seconds_countdown = "0" + seconds_countdown
+    }
+    
+    document.getElementById("countdown-pt").innerHTML = hours + ":" + minutes + ":" + seconds_countdown
+    document.getElementById("ebliftoff_small_html").innerHTML = hours + ":" + minutes + ":" + seconds_countdown
+  }
+}}
+
+function vischange_appearance() {
+  // Change the appearance if changed on another page.
+  var local_appearance = localStorage.getItem("appearance")
+
+  if (local_appearance.match("^automatic$|^light$|^dark$") && local_appearance != appearance) {
+    if (local_appearance == "automatic") {
+      if (map.getMapTypeId() == "roadmap") {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          map.setOptions({
+            styles: gmap_styles_dark
+          })
+        } else {
+          map.setOptions({
+            styles: gmap_styles_light
+          })
+        }
+      }
+
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        $('link[rel="stylesheet"][href="/assets/stylesheets/light.css"]').prop('disabled', true);
+        $('link[rel="stylesheet"][href="/assets/stylesheets/dark.css"]').prop('disabled', false);
+        if (mapCentered == true) {
+          $(".center-icon").css("background-image", "url('/assets/icons/bunnyuncenter-dark.png')")
+          $(".center-icon-dyn").css("background-image", "url('/assets/icons/bunnyuncenter-light.png')")
+        } else {
+          $(".center-icon").css("background-image", "url('/assets/icons/bunnycenter-dark.png')")
+          $(".center-icon-dyn").css("background-image", "url('/assets/icons/bunnycenter-light.png')")
+        }
+        $("#settings_autotheme").html("Dark")
+      } else {
+        $('link[rel="stylesheet"][href="/assets/stylesheets/light.css"]').prop('disabled', false);
+        $('link[rel="stylesheet"][href="/assets/stylesheets/dark.css"]').prop('disabled', true);
+        if (mapCentered == true) {
+          $(".center-icon").css("background-image", "url('/assets/icons/bunnyuncenter-dark.png')")
+          $(".center-icon-dyn").css("background-image", "url('/assets/icons/bunnyuncenter-dark.png')")
+        } else {
+          $(".center-icon").css("background-image", "url('/assets/icons/bunnycenter-dark.png')")
+          $(".center-icon-dyn").css("background-image", "url('/assets/icons/bunnycenter-dark.png')")
+        }
+        $("#settings_autotheme").html("Light")
+      }
+      $("#siteTheme_radio1").prop("checked", true)
+    } else if (local_appearance == "light") {
+      if (map.getMapTypeId() == "roadmap") {
+        map.setOptions({
+          styles: gmap_styles_light
+        })
+      } 
+      $('link[rel="stylesheet"][href="/assets/stylesheets/light.css"]').prop('disabled', false);
+      $('link[rel="stylesheet"][href="/assets/stylesheets/dark.css"]').prop('disabled', true);
+      if (mapCentered == true) {
+          $(".center-icon").css("background-image", "url('/assets/icons/bunnyuncenter-dark.png')")
+          $(".center-icon-dyn").css("background-image", "url('/assets/icons/bunnyuncenter-dark.png')")
+        } else {
+          $(".center-icon").css("background-image", "url('/assets/icons/bunnycenter-dark.png')")
+          $(".center-icon-dyn").css("background-image", "url('/assets/icons/bunnycenter-dark.png')")
+        }
+      $("#siteTheme_radio2").prop("checked", true)
+    } else if (local_appearance == "dark") {
+      if (map.getMapTypeId() == "roadmap") {
+        map.setOptions({
+          styles: gmap_styles_dark
+        })
+      }
+      $('link[rel="stylesheet"][href="/assets/stylesheets/light.css"]').prop('disabled', true);
+      $('link[rel="stylesheet"][href="/assets/stylesheets/dark.css"]').prop('disabled', false);
+      if (mapCentered == true) {
+          $(".center-icon").css("background-image", "url('/assets/icons/bunnyuncenter-dark.png')")
+          $(".center-icon-dyn").css("background-image", "url('/assets/icons/bunnyuncenter-light.png')")
+        } else {
+          $(".center-icon").css("background-image", "url('/assets/icons/bunnycenter-dark.png')")
+          $(".center-icon-dyn").css("background-image", "url('/assets/icons/bunnycenter-light.png')")
+        }
+      $("#siteTheme_radio3").prop("checked", true)
+    }
+    appearance = local_appearance
+  }
+}
+
+document.addEventListener("visibilitychange", vischange)
+document.addEventListener("visibilitychange", vischange_appearance)
+document.addEventListener("focus", vischange)
+document.addEventListener("focus", vischange_appearance)
+window.onpageshow = function(event) {
+  if (event.persisted) {
+    vischange()
+    vischange_appearance()
+  }
+}
+
+function ptcountdown() {
+  ts = (new Date().getTime()) / 1000;
+  var timeleft = routedata['destinations'][pt_endrow]['unixarrival'] - ts
+  if (timeleft <= 0) {
+    document.getElementById("countdown-pt").innerHTMl = "0:00:00"
+    document.getElementById("ebliftoff_small_html").innerHTML = "0:00:00"
+    clearInterval(ptcountdown_interval);
+    return
+  }
+
+  var hours = Math.floor(timeleft / 3600) % 24;
+  timeleft -= hours * 3600;
+  var minutes = Math.floor(timeleft / 60) % 60;
+  timeleft -= minutes * 60;
+  var seconds_countdown = Math.floor(timeleft % 60);
+
+  if (0 <= minutes && minutes <= 9) {
+    minutes = "0" + minutes
+  }
+
+  if (0 <= seconds_countdown && seconds_countdown <= 9) {
+    seconds_countdown = "0" + seconds_countdown
+  }
+
+  document.getElementById("countdown-pt").innerHTML = hours + ":" + minutes + ":" + seconds_countdown
+  document.getElementById("ebliftoff_small_html").innerHTML = hours + ":" + minutes + ":" + seconds_countdown
+}
+
+function ptcenter() {
+  var tempLatLng = new google.maps.LatLng(parseFloat(routedata['destinations'][pt_endrow]['lat']), parseFloat(routedata['destinations'][pt_endrow]['lng']))
+  var proj = mapov.getProjection();
+  var offpoint = proj.fromLatLngToContainerPixel(tempLatLng);
+  offpoint.y = offpoint.y - pxoffset;
+  map.setCenter(proj.fromContainerPixelToLatLng(offpoint));
+  map.setZoom(3);
+}
+
+function updateSettings() {
+  // Check to see if any settings have been changed
+  var sitetheme = $("input[name='siteTheme']:checked").val()
+  var mapmode_input = $("input[name='mapStyle']:checked").val()
+  var bounceeffect_input = $("input[name='bounceeffect']:checked").val()
+  var weathersummary_input = $("input[name='weatherSummary']:checked").val()
+  var ebarrival_input = $("input[name='ebArrival']:checked").val()
+  var metric_input = $("input[name='metricCustomization']:checked").val()
+  var metricunit_input = $("input[name='metricUnits']:checked").val()
+  var defaultzl_input = $("#defaultZoom").val()
+  var chromefix_input = $("input[name='chromemap_fix']:checked").val()
+  var mobilemetrics_input = $("input[name='mobileMetrics']:checked").val()
+  var localtime_input = $("input[name='localTime']:checked").val()
+
+  if (sitetheme != appearance) {
+    if (ls_avail == true) {
+      localStorage.setItem("appearance", sitetheme)
+    }
+    appearance = sitetheme
+    // If theme is set back to automatic, remove css via jQuery if it was ever changed
+    // jQuery deletes CSS it set, but doesn't mess with CSS in the style tags
+    if (sitetheme == "automatic") {
+      // Because the site does not rely on prefers color scheme (#backwardscompatibility), we set it manually.
+      if (map.getMapTypeId() == "roadmap") {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          map.setOptions({
+            styles: gmap_styles_dark
+          })
+        } else {
+          map.setOptions({
+            styles: gmap_styles_light
+          })
+        }
+      }
+
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        $('link[rel="stylesheet"][href="/assets/stylesheets/light.css"]').prop('disabled', true);
+        $('link[rel="stylesheet"][href="/assets/stylesheets/dark.css"]').prop('disabled', false);
+        if (mapCentered == true) {
+          $(".center-icon").css("background-image", "url('/assets/icons/bunnyuncenter-dark.png')")
+          $(".center-icon-dyn").css("background-image", "url('/assets/icons/bunnyuncenter-light.png')")
+        } else {
+          $(".center-icon").css("background-image", "url('/assets/icons/bunnycenter-dark.png')")
+          $(".center-icon-dyn").css("background-image", "url('/assets/icons/bunnycenter-light.png')")
+        }
+
+        if (thirdbox == "baskets") {
+          $("#metric_button").attr("class", "basket-icon-light")
+        } else if (thirdbox == "carrots") {
+          $("#metric_button").attr("class", "carrot-icon-light")
+        }
+
+      } else {
+        $('link[rel="stylesheet"][href="/assets/stylesheets/light.css"]').prop('disabled', false);
+        $('link[rel="stylesheet"][href="/assets/stylesheets/dark.css"]').prop('disabled', true);
+        if (mapCentered == true) {
+          $(".center-icon").css("background-image", "url('/assets/icons/bunnyuncenter-dark.png')")
+          $(".center-icon-dyn").css("background-image", "url('/assets/icons/bunnyuncenter-dark.png')")
+        } else {
+          $(".center-icon").css("background-image", "url('/assets/icons/bunnycenter-dark.png')")
+          $(".center-icon-dyn").css("background-image", "url('/assets/icons/bunnycenter-dark.png')")
+        }
+        if (thirdbox == "baskets") {
+          $("#metric_button").attr("class", "basket-icon-dark")
+        } else if (thirdbox == "carrots") {
+          $("#metric_button").attr("class", "carrot-icon-dark")
+        }
+      }
+    } else if (sitetheme == "light") {
+      if (map.getMapTypeId() == "roadmap") {
+        map.setOptions({
+          styles: gmap_styles_light
+        })
+      } 
+      $('link[rel="stylesheet"][href="/assets/stylesheets/light.css"]').prop('disabled', false);
+      $('link[rel="stylesheet"][href="/assets/stylesheets/dark.css"]').prop('disabled', true);
+      if (mapCentered == true) {
+          $(".center-icon").css("background-image", "url('/assets/icons/bunnyuncenter-dark.png')")
+          $(".center-icon-dyn").css("background-image", "url('/assets/icons/bunnyuncenter-dark.png')")
+        } else {
+          $(".center-icon").css("background-image", "url('/assets/icons/bunnycenter-dark.png')")
+          $(".center-icon-dyn").css("background-image", "url('/assets/icons/bunnycenter-dark.png')")
+        }
+
+        if (thirdbox == "baskets") {
+          $("#metric_button").attr("class", "basket-icon-dark")
+        } else if (thirdbox == "carrots") {
+          $("#metric_button").attr("class", "carrot-icon-dark")
+        }
+    } else if (sitetheme == "dark") {
+      if (map.getMapTypeId() == "roadmap") {
+        map.setOptions({
+          styles: gmap_styles_dark
+        })
+      }
+      $('link[rel="stylesheet"][href="/assets/stylesheets/light.css"]').prop('disabled', true);
+      $('link[rel="stylesheet"][href="/assets/stylesheets/dark.css"]').prop('disabled', false);
+      if (mapCentered == true) {
+          $(".center-icon").css("background-image", "url('/assets/icons/bunnyuncenter-dark.png')")
+          $(".center-icon-dyn").css("background-image", "url('/assets/icons/bunnyuncenter-light.png')")
+        } else {
+          $(".center-icon").css("background-image", "url('/assets/icons/bunnycenter-dark.png')")
+          $(".center-icon-dyn").css("background-image", "url('/assets/icons/bunnycenter-light.png')")
+        }
+
+      if (thirdbox == "baskets") {
+        $("#metric_button").attr("class", "basket-icon-light")
+      } else if (thirdbox == "carrots") {
+        $("#metric_button").attr("class", "carrot-icon-light")
+      }
+    }
+  }
+
+  if (mapmode_input != mapmode) {
+    if (ls_avail == true) {
+      localStorage.setItem("mapmode", mapmode_input)
+    }
+    mapmode = mapmode_input
+
+    if (mapmode == "street") {
+      if (appearance == "dark" || ((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) && appearance == "automatic")) {
+        map.setOptions({
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          styles: gmap_styles_dark
+        })
+      } else {
+        map.setOptions({
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          styles: gmap_styles_light
+        })
+      }
+    } else if (mapmode == "satellite") {
+      map.setOptions({
+          mapTypeId: google.maps.MapTypeId.SATELLITE,
+          styles: gmap_styles_satellite
+      })
+    } else if (mapmode == "hybrid") {
+      map.setOptions({
+          mapTypeId: google.maps.MapTypeId.HYBRID,
+          styles: gmap_styles_satellite
+      })
+    }
+  }
+
+  if (bounceeffect_input != bunnybounce) {
+    if (ls_avail == true) {
+      localStorage.setItem("bunnybounce", bounceeffect_input)
+    }
+    bunnybounce = bounceeffect_input
+
+    if (bounceeffect_input == "off") {
+      bunnyMarker.setAnimation()
+    } else if (bounceeffect_input == "on") {
+      if (datarow < endrow_plusone && pt_state == false) {
+        bunnyMarker.setAnimation(google.maps.Animation.BOUNCE)
+      }
+    }
+  }
+
+  if (metric_input != thirdbox) {
+    if (ls_avail) {
+      localStorage.setItem("thirdbox", metric_input)
+    }
+    thirdbox = metric_input
+    if (thirdbox == "baskets") {
+      if (returnAppearance() == "Dark") {
+        $("#metric_button").attr("class", "basket-icon-light")
+        $("#metric_button").html("")
+      } else {
+        $("#metric_button").attr("class", "basket-icon-dark")
+        $("#metric_button").html("")
+      }
+      $("#carrotseaten").hide()
+      $("#distancetravelled").hide()
+      $("#speed").hide()
+      $("#distancefromyou").hide()
+      $("#basketsdelivered").show()
+      $("#metricbox-title").html("Baskets delivered")
+      $("#extrametric_ls_header").html("Baskets delivered: ")
+      $("#extrametric_ns_header").html("Baskets delivered: ")
+      $("#metricbutton_parent").prop("title", mctitle_carrots)
+      updateBaskets()
+    } else if (thirdbox == "carrots") {
+      if (returnAppearance() == "Dark") {
+        $("#metric_button").attr("class", "carrot-icon-light")
+      } else {
+        $("#metric_button").attr("class", "carrot-icon-dark")
+      }
+      // TODO: Get the proper code in for square foot
+      $("#metric_button").html("")
+      $("#metricbox-title").html("Carrots eaten")
+      $("#basketsdelivered").hide()
+      $("#distancetravelled").hide()
+      $("#speed").hide()
+      $("#distancefromyou").hide()
+      $("#carrotseaten").show()
+      $("#extrametric_ls_header").html("Carrots eaten: ")
+      $("#extrametric_ns_header").html("Carrots eaten: ")
+      if (travel_ls == 2) {
+        $("#metricbutton_parent").prop("title", mctitle_distance_2)
+      } else {
+        $("#metricbutton_parent").prop("title", mctitle_distance_1)
+      }
+      updateBaskets()
+    } else if (thirdbox == "distance") {
+      $("#metric_button").attr("class", "material-icons")
+      // TODO: Get the proper code in for square foot
+      $("#metric_button").html("square_foot")
+      if (travel_ls == 2) {
+        $("#metricbox-title").html("Distance travelled")
+        $("#extrametric_ls_header").html("Distance travelled: ")
+        $("#extrametric_ns_header").html("Distance travelled: ")
+      } else if (travel_ls == 1) {
+        $("#metricbox-title").html("Distance traveled")
+        $("#extrametric_ls_header").html("Distance traveled: ")
+        $("#extrametric_ns_header").html("Distance traveled: ")
+      }
+      $("#basketsdelivered").hide()
+      $("#carrotseaten").hide()
+      $("#speed").hide()
+      $("#distancefromyou").hide()
+      $("#distancetravelled").show()
+      $("#metricbutton_parent").prop("title", mctitle_speed)
+      updateBaskets()
+    } else if (thirdbox == "speed") {
+      $("#metric_button").attr("class", "material-icons")
+      $("#metric_button").html("speed")
+      $("#metricbox-title").html("Speed")
+      $("#basketsdelivered").hide()
+      $("#carrotseaten").hide()
+      $("#distancetravelled").hide()
+      $("#distancefromyou").hide()
+      $("#speed").show()
+      $("#extrametric_ls_header").html("Speed: ")
+      $("#extrametric_ns_header").html("Speed: ")
+      $("#metricbutton_parent").prop("title", mctitle_distancefromyou)
+      updateBaskets()
+    } else if (thirdbox == "distancefromyou") {
+      $("#metric_button").attr("class", "material-icons")
+      $("#metric_button").html("near_me")
+      $("#metricbox-title").html("Distance from you")
+      $("#basketsdelivered").hide()
+      $("#carrotseaten").hide()
+      $("#distancetravelled").hide()
+      $("#distancefromyou").show()
+      $("#speed").hide()
+      $("#extrametric_ls_header").html("Distance from you: ")
+      $("#extrametric_ns_header").html("Distance from you: ")
+      $("#metricbutton_parent").prop("title", mctitle_baskets)
+      updateDFYmetric()
+    }
+  }
+
+  if (mobilemetrics_input != mobilemetrics) {
+    if (ls_avail) {
+      localStorage.setItem("mobilemetrics", mobilemetrics_input)
+    }
+    mobilemetrics = mobilemetrics_input
+    if (mobilemetrics == "on") {
+      $("#extrametric_ns_small").css("display", "")
+      $("#extrametric_ls_small").css("display", "")
+    } else if (mobilemetrics == "off") {
+      $("#extrametric_ns_small").hide()
+      $("#extrametric_ls_small").hide()
+    }
+  }
+
+  if (chromefix_input != chromemap_fix) {
+    if (ls_avail) {
+      localStorage.setItem("chromemap_fix", chromefix_input)
+    }
+    chromemap_fix = chromefix_input
+    if (chromemap_fix == "on") {
+      $('link[rel="stylesheet"][href="/assets/stylesheets/chromemap-fix.css"]').prop("disabled", false)
+      $('link[rel="stylesheet"][href="/assets/stylesheets/chromemap-normal.css"]').prop("disabled", true)
+    } else if (chromemap_fix == "off") {
+      $('link[rel="stylesheet"][href="/assets/stylesheets/chromemap-fix.css"]').prop("disabled", true)
+      $('link[rel="stylesheet"][href="/assets/stylesheets/chromemap-normal.css"]').prop("disabled", false)
+    }
+  }
+
+  if (metricunit_input != unit_setting) {
+    if (ls_avail) {
+      localStorage.setItem("units", metricunit_input)
+    }
+    unit_setting = metricunit_input
+    // Holy smokes, some actual efficiency in the TEBCC codebase?
+    updateUnits()
+    updateBaskets()
+    updateDFYmetric()
+  }
+
+  if (defaultzl_input != defaultzl) {
+    if (ls_avail) {
+      localStorage.setItem("defaultzl", defaultzl_input)
+    }
+    defaultzl = defaultzl_input
+    if (defaultzl == "default") {
+      if (bowser.mobile) {
+        tracking_zl = 5
+        if (mapCentered == true && tracking_over == false && pt_state == false) {
+          map.setZoom(5)
+          $("#currzl-span").html("5")
+        }
+        $("#map-overzl15-warning").hide()
+      } else {
+        tracking_zl = 6
+        if (mapCentered == true && tracking_over == false && pt_state == false) {
+          map.setZoom(6)
+          $("#currzl-span").html("6")
+        }
+        $("#map-overzl15-warning").hide()
+      }
+    } else {
+      tracking_zl = parseInt(defaultzl)
+      if (mapCentered == true && tracking_over == false && pt_state == false) {
+        map.setZoom(parseInt(defaultzl))
+        $("#currzl-span").html(defaultzl)
+      }
+      $("#map-overzl15-warning").hide()
+    }
+  }
+
+  if (weathersummary_input != weathersummary) {
+    if (ls_avail == true) {
+      localStorage.setItem("weathersummary", weathersummary_input)
+    }
+    weathersummary = weathersummary_input
+
+    if (weathersummary_input == "off") {
+      $("#esdWeather2-wrapper").hide()
+    } else if (weathersummary_input == "on") {
+      $("#esdWeather2-wrapper").show()
+    }
+  }
+
+  if (localtime_input != localtime) {
+    if (ls_avail) {
+      localStorage.setItem("localtime", localtime_input)
+    }
+    localtime = localtime_input
+  }
+ 
+  if (ebarrival_input != ebarrival) {
+    if (ls_avail == true) {
+      localStorage.setItem("ebarrival", ebarrival_input)
+    }
+    ebarrival = ebarrival_input
+    if (ebarrival_input == "on" && ebarrival_avail == true) {
+      ts = (new Date().getTime()) / 1000;
+      var ebarrival_secdiff_local = ebarrival_ts - ts;
+      if (ebarrival_secdiff_local > 0) {
+        $("#ebarrival_small").show()
+      } else {
+        $("#ebarrival_small_html").html("")
+        $("#ebarrival_small").hide()
+        $("#ebarrivaltext_small").html(ebarrivaltext)
+      }
+    } else if (ebarrival_input == "off") {
+      $("#ebarrival_small").hide()
+    }
+  }
+
+   $('#alertbottom').stop(true, true)
+   $("#alertbottom").hide()
+   $('#centerbutton').stop(true, true);
+   $("#alertbottom_pfmodal").stop(true, true)
+   $("#alertbottom_pfmodal").hide();
+   $("#alertbottom_pfmodal").fadeTo(5000, 500).fadeOut(500, function(){
+           $("#alertbottom_pfmodal").fadeOut(500);
+            });
+
+}
+
+function prerenderesd(routestep) {
+  if (mapCentered == false || tracking_over == true) {
+    var lat = routedata['destinations'][routestep.toString()]['lat']
+    var lng = routedata['destinations'][routestep.toString()]['lng']
+    var newLatLng = new google.maps.LatLng(lat, lng)
+    var proj = mapov.getProjection();
+    var offpoint = proj.fromLatLngToContainerPixel(newLatLng);
+    offpoint.y = offpoint.y - pxoffset;
+    map.panTo(proj.fromContainerPixelToLatLng(offpoint))
+  }
+  renderesd(routestep)
+  $("#esdModal").scrollTop(0)
+}
+
+function renderesd(routestep) {
+  var unixstamp = new Date(routedata['destinations'][routestep.toString()]['unixarrival'] * 1000)
+  var momentobj = moment(routedata['destinations'][routestep.toString()]['unixarrival'] * 1000)
+  var timestring = momentobj.format("LL, LT")
+  var momentobj_local = moment.tz(routedata['destinations'][routestep.toString()]['unixarrival'] * 1000, routedata['destinations'][routestep.toString()]['timezone'])
+  var timestring_local = momentobj_local.format("LL, LT")
+
+  var local_abbr = moment.tz.guess(true);
+  var local_abbrv = moment.tz.zone(local_abbr).abbr(unixstamp);
+
+  var stop_abbrv = moment.tz.zone(routedata['destinations'][routestep.toString()]['timezone']).abbr(unixstamp)
+  //$("#esd-arrivedtext").html("Arrived: ")
+  //$("#esdArrived").show()
+  //$("#esdArrived-local").hide()
+  //$("#esd-timechange").show()
+  //$("#esd-timechange-local").hide()
+  $("#esd-stepback").prop("disabled", false)
+  $("#esd-stepforward").prop("disabled", false)
+  if (geoapi_avail) {
+    var stopdist = haversineCalc(routedata['destinations'][routestep.toString()]['lat'], routedata['destinations'][routestep.toString()]['lng'], ebarrival_lat, ebarrival_lng)
+    var distance = stopdist
+    if (units == "imperial") {
+      distance = distance / midivisor
+    }
+    var distance_rounded = Math.round(distance)
+    if (stopdist < geoapi_accuracy) {
+      $("#esdDistance").html("Under " + geoapi_accuracy + " " + distance_suffix)
+      if (units == "imperial") {
+        $("#esdDistance").html("Under " + Math.floor(geoapi_accuracy / midivisor) + " " + distance_suffix)
+      }
+    } else {
+      $("#esdDistance").html(tlsWrap(distance_rounded) + " " + distance_suffix)
+    }
+  }
+  console.log("RS, DR, ER")
+  console.log(routestep, datarow, endrow)
+  if (parseInt(routestep) == parseInt(pt_endrow) + 1) {
+    $("#esd-stepback").prop("disabled", true)
+  }
+  
+  if (parseInt(routestep) == endrow - 1 || parseInt(routestep) == datarow - 1) {
+    $("#esd-stepforward").prop("disabled", true)
+  }
+
+  var backstep_function = "prerenderesd(" + (parseInt(routestep) - 1) + ")"
+  var forwardstep_function = "prerenderesd(" + (parseInt(routestep) + 1) + ")"
+  $("#esd-stepback").attr("onclick", backstep_function)
+  $("#esd-stepforward").attr("onclick", forwardstep_function)
+
+  var cityname = routedata['destinations'][routestep.toString()]['city'] + ", " + routedata['destinations'][routestep.toString()]['region']
+  var countryname = routedata['destinations'][routestep.toString()]['region']
+  var countryname_splitted = countryname.split(", ")
+  var countryname_final = ""
+  if (countryname.indexOf("United Kingdom") != -1) {
+    countryname_final = countryname_splitted[countryname_splitted.length - 2] + ", " + countryname_splitted[countryname_splitted.length - 1]
+  } else {
+    countryname_final = countryname_splitted[countryname_splitted.length - 1]
+  }
+
+  var countryname_the = ["United States", "Netherlands", "Philippines", "United Arab Emirates", "Democratic Republic of the Congo", "Central African Republic", "French Southern and Antarctic Lands", "British Indian Ocean Territory", "Dominican Republic"]
+
+  if (countryname_the.indexOf(countryname_final) != -1 || countryname_final.includes("Islands")) {
+    $("#flagspan").prop("title", "Flag of the " + countryname_final)
+  } else if (countryname.indexOf("International Space Station") != -1) {
+    $("#flagspan").prop("title", "Flag of the International Space Station")
+  } else {
+    $("#flagspan").prop("title", "Flag of " + countryname_final)
+  }
+
+  var arrtime = timestring + " " + local_abbrv;
+  var stoparrtime = timestring_local + " " + stop_abbrv
+  var pop = routedata['destinations'][routestep.toString()]['population']
+  var pop_year = routedata['destinations'][routestep.toString()]['population_year']
+  var elev = routedata['destinations'][routestep.toString()]['elevation']
+  var elev_feet = Math.round(elev / 0.304799999536704)
+  var wikisource = routedata['destinations'][routestep.toString()]['srclink']
+  var descr = routedata['destinations'][routestep.toString()]['descr']
+  var countrycode = routedata['destinations'][routestep.toString()]['countrycode']
+  var classname = "flag-icon-" + countrycode
+  var tempF = routedata['destinations'][routestep.toString()]['weather']['tempF']
+  var tempC = routedata['destinations'][routestep.toString()]['weather']['tempC']
+  var summary = routedata['destinations'][routestep.toString()]['weather']['summary']
+  var icon = routedata['destinations'][routestep.toString()]['weather']['icon']
+  var classicon = "wi-forecast-io-" + icon;
+
+  // New localization for ESD
+  if (browser_name == "Safari" && browser_version <= 9) {
+    pop = numberWithCommas(pop)
+    elev = numberWithCommas(elev)
+    elev_feet = numberWithCommas(elev_feet)
+  } else {
+    pop = pop.toLocaleString()
+    elev = elev.toLocaleString()
+    elev_feet = elev_feet.toLocaleString()
+  }
+
+  $("#flagspan").removeClass();
+  $("#flagspan").addClass("flag-icon").addClass(classname)
+  $("#esdHeader").html(cityname)
+  $("#esdArrived").html(arrtime)
+  $("#esdArrived-local").html(stoparrtime)
+  if (localtime == "on") {
+    $("#esdArrivedLocal-div").show()
+    $("#esd-arrivedtext").html("Arrived (Your time): ")
+    $("#esdArrived-div").removeAttr("title")
+  } else if (localtime == "off") {
+    $("#esdArrivedLocal-div").hide()
+    $("#esd-arrivedtext").html("Arrived: ")
+    $("#esdArrived-div").attr("title", "Local arrival time: " + stoparrtime)
+  }
+  // Turning off population year for testing
+  if (pop_year != "0") {
+    $("#esdPopulation").html(pop + " (" + pop_year + ")")
+  } else {
+    $("#esdPopulation").html(pop)
+  }
+
+  if (units == "imperial") {
+    $("#esdElevation").html(elev_feet + " ft")
+    $("#esdWeather").html(tempF + "°F")
+  } else if (units == "metric") {
+    $("#esdElevation").html(elev + " m")
+    $("#esdWeather").html(tempC + "°C")
+  }
+
+  $("#esdDescr").html(descr)
+  $("#esdHref").attr("href", wikisource)
+  $("#esdHrefText").html(wikisource)
+  $("#esdWeather2").html(summary)
+  $("#esdWeatherIcon").removeClass();
+  $("#esdWeatherIcon").addClass("wi").addClass(classicon)
+  $("#esdWeatherIcon").prop("title", summary)
+  $("#esdWeatherIcon").prop("aria-label", summary)
+  balert_hide()
+  $("#esdModal").modal('show')
+
+}
+
+function gmapsAvail() {
+  gmaps_avail = true
+  return
+}
+
+function resetAllSettings() {
+  if (appearance != "automatic") {
+    appearance = "automatic"
+    if (ls_avail == true) {
+      localStorage.setItem("appearance", "automatic")
+    }
+
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      $('link[rel="stylesheet"][href="/assets/stylesheets/light.css"]').prop('disabled', true);
+      $('link[rel="stylesheet"][href="/assets/stylesheets/dark.css"]').prop('disabled', false);
+      if (mapCentered == true) {
+        $(".center-icon").css("background-image", "url('/assets/icons/bunnyuncenter-dark.png')")
+        $(".center-icon-dyn").css("background-image", "url('/assets/icons/bunnyuncenter-light.png')")
+      } else {
+        $(".center-icon").css("background-image", "url('/assets/icons/bunnycenter-dark.png')")
+        $(".center-icon-dyn").css("background-image", "url('/assets/icons/bunnycenter-light.png')")
+      }
+
+      if (thirdbox == "baskets") {
+        $("#metric_button").attr("class", "basket-icon-light")
+      } else if (thirdbox == "carrots") {
+        $("#metric_button").attr("class", "carrot-icon-light")
+      }
+    } else {
+      $('link[rel="stylesheet"][href="/assets/stylesheets/light.css"]').prop('disabled', false);
+      $('link[rel="stylesheet"][href="/assets/stylesheets/dark.css"]').prop('disabled', true);
+      if (mapCentered == true) {
+        $(".center-icon").css("background-image", "url('/assets/icons/bunnyuncenter-dark.png')")
+        $(".center-icon-dyn").css("background-image", "url('/assets/icons/bunnyuncenter-dark.png')")
+      } else {
+        $(".center-icon").css("background-image", "url('/assets/icons/bunnycenter-dark.png')")
+        $(".center-icon-dyn").css("background-image", "url('/assets/icons/bunnycenter-dark.png')")
+      }
+
+      if (thirdbox == "baskets") {
+        $("#metric_button").attr("class", "basket-icon-dark")
+      } else if (thirdbox == "carrots") {
+        $("#metric_button").attr("class", "carrot-icon-dark")
+      }
+    } 
+  }
+
+  if (mapmode != "street") {
+    mapmode = "street"
+    if (ls_avail == true) {
+      localStorage.setItem("mapmode", "street")
+    }
+
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      map.setOptions({
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        styles: gmap_styles_dark
+      })
+    } else {
+      map.setOptions({
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        styles: gmap_styles_light
+      })
+    }
+  } else {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      map.setOptions({
+        styles: gmap_styles_dark
+      })
+    } else {
+      map.setOptions({
+        styles: gmap_styles_light
+      })
+    }
+  }
+
+  if (bunnybounce != "off") {
+    bunnybounce = "off"
+    if (ls_avail == true) {
+      localStorage.setItem("bunnybounce", "off")
+    }
+
+    bunnyMarker.setAnimation()
+  }
+
+  if (unit_setting != "automatic") {
+    unit_setting = "automatic"
+    if (ls_avail) {
+      localStorage.setItem("units", "automatic")
+    }
+    updateUnits()
+    updateBaskets()
+    updateDFYmetric()
+  }
+
+  if (mobilemetrics != "on") {
+    mobilemetrics = "on"
+    if (ls_avail) {
+      localStorage.setItem("mobilemetrics", "on")
+    }
+    $("#extrametric_ns_small").css("display", "")
+    $("#extrametric_ls_small").css("display", "")
+  }
+
+  if (localtime != "off") {
+    localtime = "off"
+    if (ls_avail) {
+      localStorage.setItem("localtime", "off")
+    }
+  }
+
+  if (chromemap_fix != "off" && chromium_browsers.indexOf(browser_name) != -1 && browser_os != "iOS") {
+    chromemap_fix = "off"
+    if (ls_avail) {
+      localStorage.setItem("chromemap_fix", "off")
+    }
+    $('link[rel="stylesheet"][href="/assets/stylesheets/chromemap-fix.css"]').prop("disabled", true)
+    $('link[rel="stylesheet"][href="/assets/stylesheets/chromemap-normal.css"]').prop("disabled", false)
+  }
+
+  if (thirdbox != "baskets") {
+    thirdbox = "baskets"
+    if (ls_avail) {
+      localStorage.setItem("thirdbox", "baskets")
+    }
+    if (returnAppearance() == "Dark") {
+      $("#metric_button").attr("class", "basket-icon-light")
+      $("#metric_button").html("")
+    } else {
+      $("#metric_button").attr("class", "basket-icon-dark")
+      $("#metric_button").html("")
+    }
+    $("#carrotseaten").hide()
+    $("#distancetravelled").hide()
+    $("#speed").hide()
+    $("#distancefromyou").hide()
+    $("#basketsdelivered").show()
+    $("#metricbox-title").html("Baskets delivered")
+    $("#extrametric_ls_header").html("Baskets delivered: ")
+    $("#extrametric_ns_header").html("Baskets delivered: ")
+    $("#metricbutton_parent").prop("title", mctitle_carrots)
+    updateBaskets()
+  }
+
+  if (weathersummary != "on") {
+    weathersummary = "on"
+    if (ls_avail == true) {
+      localStorage.setItem("weathersummary", "on")
+    }
+
+    $("#esdWeather2-wrapper").show()
+  }
+
+  if (defaultzl != "default") {
+    defaultzl = "default"
+    if (ls_avail) {
+      localStorage.setItem("defaultzl", "default")
+    }
+    if (bowser.mobile) {
+      tracking_zl = 5
+      if (mapCentered == true && tracking_over == false && pt_state == false) {
+        map.setZoom(5)
+      }
+      $("#defaultZoom").prop("selectedIndex", 5)
+      $("#currzl-span").html("5")
+      $("#map-overzl15-warning").hide()
+    } else {
+      tracking_zl = 6
+      if (mapCentered == true && tracking_over == false && pt_state == false) {
+        map.setZoom(6)
+      }
+      $("#defaultZoom").prop("selectedIndex", 6)
+      $("#currzl-span").html("6")
+      $("#map-overzl15-warning").hide()
+    }
+  }
+
+  if (ebarrival != "on") {
+    ebarrival = "on"
+    if (ls_avail == true) {
+      localStorage.setItem("ebarrival", "on")
+    }
+
+    if (ebarrival_avail == true) {
+      ts = (new Date().getTime()) / 1000;
+      var ebarrival_secdiff_local = ebarrival_ts - ts;
+      if (ebarrival_secdiff_local > 0) {
+        $("#ebarrival_small").show()
+      } else {
+        $("#ebarrival_small_html").html("")
+        $("#ebarrival_small").hide()
+        $("#ebarrivaltext_small").html(ebarrivaltext)
+      }
+    }
+  }
+
+  $("#siteTheme_radio1").prop("checked", true)
+  $("#mapStyle_radio1").prop("checked", true)
+  $("#bounceeffect_radio2").prop("checked", true)
+  $("#weatherSummary_radio1").prop("checked", true)
+  $("#localTime_radio2").prop("checked", true)
+  $("#metricCustomization_baskets").prop("checked", true)
+  $("#metricUnits_automatic").prop("checked", true)
+  if (bowser.mobile) {
+    $("#defaultZoom").prop("selectedIndex", 5)
+  } else {
+    $("#defaultZoom").prop("selectedIndex", 6)
+  }
+  $("#chromemap_fix_off").prop("checked", true)
+  $("#mobileMetrics_on").prop("checked", true)
+  $("#ebArrival_radio1").prop("checked", true)
+  $("#rasConfirmModal").modal("hide")
+  $("#preferencesModal").modal("hide")
+  document.getElementById("alertbottom_message").innerHTML = "Successfully reset settings to default."
+   $('#alertbottom').stop(true, true);
+   $("#alertbottom").hide()
+   $('#centerbutton').stop(true, true);
+   $("#alertbottom_pfmodal").stop(true, true)
+   $("#alertbottom_pfmodal").hide()
+   $("#alertbottom").fadeTo(5000, 500).fadeOut(500, function(){
+           $("#alertbottom").fadeOut(500);
+            });
+   $("#list-reset-list").removeClass("active show")
+   $("#list-reset").removeClass("active show")
+   $("#list-ba-list").addClass("active show")
+   $("#list-ba").addClass("active show")
+}
+
+function olsSetSettings() {
+  if (appearance != "dark") {
+    appearance = "dark"
+    if (ls_avail == true) {
+      localStorage.setItem("appearance", "dark")
+    }
+
+    $('link[rel="stylesheet"][href="/assets/stylesheets/light.css"]').prop('disabled', true);
+    $('link[rel="stylesheet"][href="/assets/stylesheets/dark.css"]').prop('disabled', false);
+    if (mapCentered == true) {
+      $(".center-icon").css("background-image", "url('/assets/icons/bunnyuncenter-dark.png')")
+      $(".center-icon-dyn").css("background-image", "url('/assets/icons/bunnyuncenter-dark.png')")
+    } else {
+      $(".center-icon").css("background-image", "url('/assets/icons/bunnycenter-dark.png')")
+      $(".center-icon-dyn").css("background-image", "url('/assets/icons/bunnycenter-dark.png')")
+    }
+    if (thirdbox == "baskets") {
+      $("#metric_button").attr("class", "basket-icon-light")
+    } else if (thirdbox == "carrots") {
+      $("#metric_button").attr("class", "carrot-icon-light")
+    }
+  }
+
+  if (mapmode != "hybrid") {
+    mapmode = "hybrid"
+    if (ls_avail == true) {
+      localStorage.setItem("mapmode", "hybrid")
+    }
+
+    map.setOptions({
+      mapTypeId: google.maps.MapTypeId.HYBRID,
+      styles: gmap_styles_satellite
+    })
+  } else {
+    map.setOptions({
+      styles: gmap_styles_satellite
+    })
+  }
+
+  if (bunnybounce != "off") {
+    bunnybounce = "off"
+    if (ls_avail == true) {
+      localStorage.setItem("bunnybounce", "off")
+    }
+
+    bunnyMarker.setAnimation()
+  }
+
+  if (weathersummary != "on") {
+    weathersummary = "on"
+    if (ls_avail == true) {
+      localStorage.setItem("weathersummary", "on")
+    }
+
+    $("#esdWeather2-wrapper").show()
+  }
+  
+  if (mobilemetrics != "on") {
+    mobilemetrics = "on"
+    if (ls_avail) {
+      localStorage.setItem("mobilemetrics", "on")
+    }
+    $("#extrametric_ns_small").css("display", "")
+    $("#extrametric_ls_small").css("display", "")
+  }
+
+  if (localtime != "off") {
+    localtime = "off"
+    if (ls_avail) {
+      localStorage.setItem("localtime", "off")
+    }
+  }
+
+  if (chromemap_fix != "on" && chromium_browsers.indexOf(browser_name) != -1 && browser_os != "iOS") {
+    chromemap_fix = "on"
+    if (ls_avail) {
+      localStorage.setItem("chromemap_fix", "on")
+    }
+    $('link[rel="stylesheet"][href="/assets/stylesheets/chromemap-fix.css"]').prop("disabled", false)
+    $('link[rel="stylesheet"][href="/assets/stylesheets/chromemap-normal.css"]').prop("disabled", true)
+  }
+
+  if (defaultzl != "default") {
+    defaultzl = "default"
+    if (ls_avail) {
+      localStorage.setItem("defaultzl", "default")
+    }
+    if (bowser.mobile) {
+      tracking_zl = 5
+      if (mapCentered == true && tracking_over == false && pt_state == false) {
+        map.setZoom(5)
+      }
+      $("#defaultZoom").prop("selectedIndex", 5)
+      $("#currzl-span").html("5")
+      $("#map-overzl15-warning").hide()
+    } else {
+      tracking_zl = 6
+      if (mapCentered == true && tracking_over == false && pt_state == false) {
+        map.setZoom(6)
+      }
+      $("#defaultZoom").prop("selectedIndex", 6)
+      $("#currzl-span").html("6")
+      $("#map-overzl15-warning").hide()
+    }
+  }
+
+  if (thirdbox != "baskets") {
+    thirdbox = "baskets"
+    if (ls_avail) {
+      localStorage.setItem("thirdbox", "baskets")
+    }
+    if (returnAppearance() == "Dark") {
+      $("#metric_button").attr("class", "basket-icon-light")
+      $("#metric_button").html("")
+    } else {
+      $("#metric_button").attr("class", "basket-icon-dark")
+      $("#metric_button").html("")
+    }
+    $("#carrotseaten").hide()
+    $("#distancetravelled").hide()
+    $("#speed").hide()
+    $("#distancefromyou").hide()
+    $("#basketsdelivered").show()
+    $("#metricbox-title").html("Baskets delivered")
+    $("#extrametric_ls_header").html("Baskets delivered: ")
+    $("#extrametric_ns_header").html("Baskets delivered: ")
+    $("#metricbutton_parent").prop("title", mctitle_carrots)
+    updateBaskets()
+  }
+
+  if (ebarrival != "off") {
+    ebarrival = "off"
+    if (ls_avail == true) {
+      localStorage.setItem("ebarrival", "off")
+    }
+
+    $("#ebarrival_small").hide()
+  }
+  $("#siteTheme_radio3").prop("checked", true)
+  $("#ebArrival_radio2").prop("checked", true)
+  $("#mapStyle_radio3").prop("checked", true)
+  $("#weatherSummary_radio1").prop("checked", true)
+  $("#localTime_radio2").prop("checked", true)
+  $("#bounceeffect_radio2").prop("checked", true)
+  $("#metricCustomization_baskets").prop("checked", true)
+  if (bowser.mobile) {
+    $("#defaultZoom").prop("selectedIndex", 5)
+  } else {
+    $("#defaultZoom").prop("selectedIndex", 6)
+  }
+  $("#chromemap_fix_on").prop("checked", true)
+  $("#mobileMetrics_on").prop("checked", true)
+  $("#olsConfirmModal").modal("hide")
+  $("#preferencesModal").modal("hide")
+  $("#alertbottom_message").html("Successfully set optimal livestreaming settings.")
+  $("#alertbottom").stop(true, true)
+  $("#alertbottom").hide()
+  $("#alertbottom_pfmodal").stop(true, true)
+  $("#alertbottom_pfmodal").hide()
+  $("#centerbutton").stop(true, true)
+  $("#alertbottom").fadeTo(5000, 500).fadeOut(500, function(){
+           $("#alertbottom").fadeOut(500);
+            });
+  $("#list-reset-list").removeClass("active show")
+  $("#list-reset").removeClass("active show")
+  $("#list-ba-list").addClass("active show")
+  $("#list-ba").addClass("active show")
+
+}
+
+function pfmodal_hide() {
+  $("#currzl-span").html(map.getZoom().toString())
+  if (map.getZoom() >= 15) {
+    $("#map-overzl15-warning").show()
+  } else {
+    $("#map-overzl15-warning").hide()
+  }
+  $("#alertbottom_pfmodal").stop(true, true)
+  $("#alertbottom_pfmodal").hide()
+  $("#alertbottom").stop(true, true)
+  $("#alertbottom").fadeOut(300)
+}
+
+function balert_hide() {
+  $("#alertbottom").stop(true, true)
+  $("#alertbottom").fadeOut(300)
+}
+
+// https://stackoverflow.com/a/37032284
+$('body').on('hidden.bs.modal', function () {
+    if($('.modal.show').length > 0)
+    {
+        $('body').addClass('modal-open');
+    }
+});
+
+function metricSwitch() {
+  $("#metricCustomization_baskets").prop("checked", false)
+  $("#metricCustomization_carrots").prop("checked", false)
+  $("#metricCustomization_distance").prop("checked", false)
+  $("#metricCustomization_speed").prop("checked", false)
+  $("#metricCustomization_distancefromyou").prop("checked", false)
+  if (thirdbox == "baskets") {
+    thirdbox = "carrots"
+    if (ls_avail) {
+      localStorage.setItem("thirdbox", "carrots")
+    }
+    if (returnAppearance() == "Dark") {
+      $("#metric_button").attr("class", "carrot-icon-light")
+    } else {
+      $("#metric_button").attr("class", "carrot-icon-dark")
+    }
+    // TODO: Get the proper code in for square foot
+    $("#metric_button").html("")
+    $("#metricbox-title").html("Carrots eaten")
+    $("#basketsdelivered").hide()
+    $("#distancetravelled").hide()
+    $("#speed").hide()
+    $("#distancefromyou").hide()
+    $("#carrotseaten").show()
+    $("#metricCustomization_carrots").prop("checked", true)
+    $("#extrametric_ls_header").html("Carrots eaten: ")
+    $("#extrametric_ns_header").html("Carrots eaten: ")
+    if (travel_ls == 2) {
+      $("#metricbutton_parent").prop("title", mctitle_distance_2)
+    } else {
+      $("#metricbutton_parent").prop("title", mctitle_distance_1)
+    }
+    updateBaskets()
+  } else if (thirdbox == "carrots") {
+    thirdbox = "distance"
+    if (ls_avail) {
+      localStorage.setItem("thirdbox", "distance")
+    }
+    $("#metric_button").attr("class", "material-icons")
+    // TODO: Get the proper code in for square foot
+    $("#metric_button").html("square_foot")
+    if (travel_ls == 2) {
+      $("#metricbox-title").html("Distance travelled")
+      $("#extrametric_ls_header").html("Distance travelled: ")
+      $("#extrametric_ns_header").html("Distance travelled: ")
+    } else if (travel_ls == 1) {
+      $("#metricbox-title").html("Distance traveled")
+      $("#extrametric_ls_header").html("Distance traveled: ")
+      $("#extrametric_ns_header").html("Distance traveled: ")
+    }
+    $("#basketsdelivered").hide()
+    $("#carrotseaten").hide()
+    $("#speed").hide()
+    $("#distancefromyou").hide()
+    $("#distancetravelled").show()
+    $("#metricCustomization_distance").prop("checked", true)
+    $("#metricbutton_parent").prop("title", mctitle_speed)
+    updateBaskets()
+  } else if (thirdbox == "distance") {
+    thirdbox = "speed"
+    if (ls_avail) {
+      localStorage.setItem("thirdbox", "speed")
+    }
+    $("#metric_button").attr("class", "material-icons")
+    $("#metric_button").html("speed")
+    $("#metricbox-title").html("Speed")
+    $("#basketsdelivered").hide()
+    $("#carrotseaten").hide()
+    $("#distancefromyou").hide()
+    $("#distancetravelled").hide()
+    $("#speed").show()
+    $("#metricCustomization_speed").prop("checked", true)
+    $("#extrametric_ls_header").html("Speed: ")
+    $("#extrametric_ns_header").html("Speed: ")
+    $("#metricbutton_parent").prop("title", mctitle_distancefromyou)
+    updateBaskets()
+  } else if (thirdbox == "speed") {
+    thirdbox = "distancefromyou"
+    if (ls_avail) {
+      localStorage.setItem("thirdbox", "distancefromyou")
+    }
+    $("#metric_button").attr("class", "material-icons")
+    $("#metric_button").html("near_me")
+    $("#metricbox-title").html("Distance from you")
+    $("#carrotseaten").hide()
+    $("#distancetravelled").hide()
+    $("#speed").hide()
+    $("#distancefromyou").show()
+    $("#basketsdelivered").hide()
+    $("#metricCustomization_distancefromyou").prop("checked", true)
+    $("#extrametric_ls_header").html("Distance from you: ")
+    $("#extrametric_ns_header").html("Distance from you: ")
+    $("#metricbutton_parent").prop("title", mctitle_baskets)
+    updateDFYmetric()
+  } else if (thirdbox == "distancefromyou") {
+    thirdbox = "baskets"
+    if (ls_avail) {
+      localStorage.setItem("thirdbox", "baskets")
+    }
+    if (returnAppearance() == "Dark") {
+      $("#metric_button").attr("class", "basket-icon-light")
+      $("#metric_button").html("")
+    } else {
+      $("#metric_button").attr("class", "basket-icon-dark")
+      $("#metric_button").html("")
+    }
+    $("#carrotseaten").hide()
+    $("#distancetravelled").hide()
+    $("#speed").hide()
+    $("#distancefromyou").hide()
+    $("#basketsdelivered").show()
+    $("#metricbox-title").html("Baskets delivered")
+    $("#metricCustomization_baskets").prop("checked", true)
+    $("#extrametric_ls_header").html("Baskets delivered: ")
+    $("#extrametric_ns_header").html("Baskets delivered: ")
+    $("#metricbutton_parent").prop("title", mctitle_carrots)
+    updateBaskets()
+  }
+}
+
+function esdStopLocal() {
+  $("#esd-arrivedtext").html("Arrived (Local Time): ")
+  $("#esdArrived").hide()
+  $("#esdArrived-local").show()
+  $("#esd-timechange").hide()
+  $("#esd-timechange-local").show()
+}
+
+function esdUserLocal() {
+  $("#esd-arrivedtext").html("Arrived: ")
+  $("#esdArrived").show()
+  $("#esdArrived-local").hide()
+  $("#esd-timechange").show()
+  $("#esd-timechange-local").hide()
+}
+</script>
+<!-- This key only works in TEBCC production. Replace the key with your own key if you are an OSS user and are trying to get the tracker to run on your machine. 
+     Leave the callback alone, it must be set to gmaps avail. -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA48NwfYj95XB-RQpZsbuViaRhp-SDwCZM&callback=gmapsAvail" async defer></script>
+<body>
+<div id="map"></div>
+<div class="countainer-fluid overlay" id="containeroverlay" style="font-family: Roboto; display: none">
+  <div class="row" id="mainrow" style="position: fixed; padding-right: 1em; padding-left: 1em; padding-top: 1em; margin-right: 0px; margin-left: 0px; width: 100%">
+    <div class="d-none d-sm-block col">
+      <div class="card top-card mb-2">
+        <div class="card-body">
+          <h5 class="card-title">Last seen</h5>
+          <p class="card-text" style="margin-bottom: 0rem;"><span id="lastseen">Loading...</span></p>
+          <small id="extrametric_ls_small"><span id="extrametric_ls_header" style="margin-top: 2px"></span><span id="extrametric_ls_body" style="margin-top: 2px"></span></small>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card top-card mb-2">
+        <div class="card-body">
+          <h5 class="card-title">Next stop</h5>
+          <p class="card-text" style="margin-bottom: 0rem;"><span id="nextstop">Loading...</span></p>
+          <small id="extrametric_ns_small"><span id="extrametric_ns_header" style="margin-top: 2px"></span><span id="extrametric_ns_body" style="margin-top: 2px"></span><br></small>
+          <small id="ebarrival_small"><span id="ebarrival_small_html" style="margin-top: 2px"></span></small>
+          <small id="ns_bottomerror" style="display: none"><br><span id="ns_bottomerror_html" style="margin-top: 2px"></span></small>
+        </div>
+      </div>
+    </div>
+    <div class="d-none d-md-block col">
+      <div class="card top-card mb-2">
+        <div class="card-body">
+          <button type="button" id="metricbutton_parent" class="btn top-card" onclick="metricSwitch()" style="float: right; touch-action: manipulation;"><i id="metric_button" class="material-icons" style="line-height: 24px; bottom: -0.2rem; position: relative"></i></button>
+          <h5 class="card-title" id="metricbox-title">Baskets delivered</h5>
+          <p class="card-text"><span id="basketsdelivered">Loading...</span><span id="carrotseaten" style="display: none">Loading...</span><span id="distancetravelled" style="display: none">Loading...</span><span id="speed" style="display: none">Loading...</span><span id="distancefromyou" style="display: none"><Loading class=""></Loading></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" id="ptrow" style="position: fixed; padding-right: 1em; padding-left: 1em; padding-top: 1em; margin-right: 0px; margin-left: 0px; width: 100%" hidden>
+    <div class="col-12 col-sm-8">
+      <div class="card top-card mb-2">
+        <div class="card-body">
+          <h5 class="card-title">Last seen</h5>
+          <p class="card-text" style="margin-bottom: 0rem;"><span id="lastseen-pt">Loading...</span></p>
+          <small id="ebliftoff_small">Time until liftoff: <span id="ebliftoff_small_html" style="margin-top: 2px">Loading...</span></small>
+        </div>
+      </div>
+    </div>
+    <div class="d-none d-sm-block col-sm-4">
+      <div class="card top-card mb-2">
+        <div class="card-body">
+          <h5 class="card-title">Time until liftoff</h5>
+          <p class="card-text" style="font-family: 'Roboto';"><span id="countdown-pt">Loading...</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+      <div class="alert alert-success alert-dismissible fade show fixed-bottom col-md-4 col-md-offset-4 col-8 col-offset-8" role="alert" id="alertbottom" style="display: none; margin-bottom: 30px; margin-left: 3.75em; z-index: 999999; font-family: 'Roboto'">
+        <span id="alertbottom_message">Map is now centered on the Easter Bunny.</span>
+      </div>
+      <div class="row fixed-bottom" style="padding: 0px !important; width: 68px; max-width: 68px">
+        <div class="col-12" style="padding: 0px !important" id="centerbutton">
+        <button class="btn btn-left btn-stack" id="centericon" style="margin-left: 22px; margin-bottom: 110px; width: 44px; height: 36px" role="button" title="Click to uncenter the map on the Easter Bunny" aria-label="Click to uncenter the map on the Easter Bunny" onclick="resetMap()"><i class="center-icon" style="right: 0.4em; bottom: 0.12em"></i></button>
+        </div>
+      </div>
+      <div class="row fixed-bottom" style="padding: 0px !important; width: 68px; max-width: 68px">
+        <button type="button" style="margin-left: 22px; margin-bottom: 70px; padding: .25rem .8125rem" class="btn btn-left btn-stack" aria-label="Click to change tracker preferences" title="Click to change tracker preferences" data-toggle="modal" data-target="#preferencesModal" onclick="pfmodal_hide();">
+          <i class="material-icons" id="settings-icon" style="font-size: 18px; line-height: 27px; position: relative; bottom: -0.04rem">&#xE8B8;</i>
+        </button>
+      </div>
+      <div class="row fixed-bottom" style="padding: 0px !important; width: 68px; max-width: 68px">
+        <button type="button" style="margin-left: 22px; margin-bottom: 30px; padding: .25rem .8125rem" class="btn btn-left btn-stack" aria-label="Click to show information about the tracker" title="Click to show information about the tracker" data-toggle="modal" onclick="balert_hide()" data-target="#aboutModal">
+          <i class="material-icons" id="info-icon" style="font-size: 18px; line-height: 27px; position: relative; bottom: -0.04rem">&#xE88E;</i>
+        </button>
+      </div>
+</div>
+
+<div class="modal fade" id="preferencesModal" tabindex="-1" role="dialog" aria-labelledby="preferencesModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content top-card">
+      <div class="modal-header">
+        <h5 class="modal-title" id="preferencesModalLabel">Tracker Preferences</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="list-group" id="list-pf-tab" role="tablist">
+              <a class="list-group-item list-group-item-action active" id="list-ba-list" data-toggle="list" href="#list-ba" role="tab" aria-controls="home"><i class="material-icons icon-settingsmenu">track_changes</i>Tracker</a>
+              <a class="list-group-item list-group-item-action" id="list-ms-list" data-toggle="list" href="#list-ms" role="tab" aria-controls="profile"><i class="material-icons icon-settingsmenu">map</i>Map</a>
+              <a class="list-group-item list-group-item-action" id="list-metrics-list" data-toggle="list" href="#list-metrics" role="tab" aria-controls="profile"><i class="material-icons icon-settingsmenu">show_chart</i>Metrics</a>
+              <a class="list-group-item list-group-item-action" id="list-reset-list" data-toggle="list" href="#list-reset" role="tab" aria-controls="profile"><i class="material-icons icon-settingsmenu">refresh</i>Reset</a>
+            </div>
+          </div>
+          <div class="col-sm-8">
+            <div class="tab-content" id="nav-tabContent">
+              <div class="tab-pane fade show active" id="list-ba" role="tabpanel" aria-labelledby="list-ba-list">
+                <div class="lsunavail_warning" style="display: none">
+                  <b>Warning: </b>Local storage is unavailable. Settings will not persist through reloads.<br>
+                  For more information, click <a class="sharelink" data-toggle="modal" data-target="#lsUnavailModal">here</a>.
+                  <hr class="styledhr">
+                </div>
+                <div id="geoapi-unavailwarn">
+                  <b>Warning: </b>Unable to determine your location. The estimated arrival time feature & distance to you metric are unavailable.<br>
+                  For more information, click <a class="sharelink" data-toggle="modal" data-target="#geoapiUnavailModal">here</a>.
+                  <hr class="styledhr">
+                </div>
+                <h5>Tracker appearance</h5>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="siteTheme" id="siteTheme_radio1" value="automatic">
+                  <label class="form-check-label" for="siteTheme_radio1">Automatic (<span id="settings_autotheme"></span>)</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="siteTheme" id="siteTheme_radio2" value="light">
+                  <label class="form-check-label" for="siteTheme_radio2">Light</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="siteTheme" id="siteTheme_radio3" value="dark">
+                  <label class="form-check-label" for="siteTheme_radio3">Dark</label>
+                </div>
+                <br>
+                <small id="saminternet-autodark" style="display: none"><b>Note: </b>Your browser doesn't support changing tracker appearance from the appearance mode your device is in. You'll need to change it manually.<br><br></small>
+                <small>Changes the tracker appearance. Automatic uses what appearance mode your device is in.</small>
+                <hr class="styledhr">
+                <h5>Easter Bunny estimated arrival time</h5>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="ebArrival" id="ebArrival_radio1" value="on">
+                  <label class="form-check-label" for="ebArrival_radio1">On</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="ebArrival" id="ebArrival_radio2" value="off">
+                  <label class="form-check-label" for="ebArrival_radio2">Off</label>
+                </div>
+                <br>
+                <small>
+                <span class="ebarrival_mobilewarning"><b>Note: </b>Enabling this may cause the Easter Bunny icon to be obstructed.<br><br></span>
+                <span id="ebarrivaltext_small">Shows when the Easter Bunny is estimated to arrive at your location. Turn this off if you're live streaming the tracker.</span></small>
+                <hr class="styledhr">
+                <h5>Tracker units</h5>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="metricUnits" id="metricUnits_automatic" value="automatic">
+                  <label class="form-check-label" for="metricUnits_automatic">Automatic (<span id="metricUnits_autospan"></span>)</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="metricUnits" id="metricUnits_metric" value="metric">
+                  <label class="form-check-label" for="metricUnits_metric">Metric</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="metricUnits" id="metricUnits_imperial" value="imperial">
+                  <label class="form-check-label" for="metricUnits_imperial">Imperial</label>
+                </div>
+                <br>
+                <small>Changes the unit system used in the tracker for metrics and stop information.</small>
+                <hr class="styledhr">
+                <h5>Weather summary in stop information</h5>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="weatherSummary" id="weatherSummary_radio1" value="on">
+                  <label class="form-check-label" for="weatherSummary_radio1">On</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="weatherSummary" id="weatherSummary_radio2" value="off">
+                  <label class="form-check-label" for="weatherSummary_radio2">Off</label>
+                </div>
+                <br>
+                <small>Shows a text summary of the weather conditions in the stop information window.</small>
+                <hr class="styledhr">
+                <h5>Local arrival time in stop information</h5>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="localTime" id="localTime_radio1" value="on">
+                  <label class="form-check-label" for="localTime_radio1">On</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="localTime" id="localTime_radio2" value="off">
+                  <label class="form-check-label" for="localTime_radio2">Off</label>
+                </div>
+                <br>
+                <small>Shows the local arrival time of the Easter Bunny in the stop information window.</small>
+              </div>
+              <div class="tab-pane fade" id="list-ms" role="tabpanel" aria-labelledby="list-ms-list">
+                <div class="lsunavail_warning" style="display: none">
+                  <b>Warning: </b>Local storage is unavailable. Settings will not persist through reloads.<br>
+                  For more information, click <a class="sharelink" data-toggle="modal" data-target="#lsUnavailModal">here</a>.
+                  <hr class="styledhr">
+                </div>
+                <h5>Map style</h5>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="mapStyle" id="mapStyle_radio1" value="street">
+                  <label class="form-check-label" for="mapStyle_radio1">Street</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="mapStyle" id="mapStyle_radio2" value="satellite">
+                  <label class="form-check-label" for="mapStyle_radio2">Satellite</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="mapStyle" id="mapStyle_radio3" value="hybrid">
+                  <label class="form-check-label" for="mapStyle_radio3">Hybrid</label>
+                </div>
+                <br>
+                <small>Changes the map style. Street mode will adapt to light/dark mode.</small>
+                <hr class="styledhr">
+                <h5 style="margin-bottom: 14px">Default zoom level</h5>
+                <select id="defaultZoom" style="-moz-appearance: menulist-button; -webkit-appearance: menulist-button; appearance: menulist; display: block; width: 100%; margin-bottom: 8px">
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5" id="dz-5span">5</option>
+                  <option value="default" id="dz-6span">6 (default)</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                </select>
+                <small style="margin-top: 8px"><span id="mapzl-span">Sets the map zoom level when the tracker is loaded, and the Easter Bunny is being recentered.</span> <br><br>
+                  The current zoom level of the map is <b><span id="currzl-span"></span></b>. <span id="map-overzl15-warning" style="display: none">The default zoom cannot be set to this level, as it would result in a poor tracking experience.</span>
+                </small>
+                <hr class="styledhr">
+                <div id="chromemap-fix-settingsdiv" style="display: none">
+                  <h5>Fix gray lines on map</h5>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="chromemap_fix" id="chromemap_fix_on" value="on">
+                    <label class="form-check-label" for="chromemap_fix_radio1">On</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="chromemap_fix" id="chromemap_fix_off" value="off">
+                    <label class="form-check-label" for="chromemap_fix_radio2">Off</label>
+                  </div>
+                  <br>
+                  <small>Fixes issues with gray lines on the map with your browser. Enabling this may cause map features to be distorted.</small>
+                  <hr class="styledhr">
+                </div>
+                <h5>Easter Bunny bouncing effect</h5>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="bounceeffect" id="bounceeffect_radio1" value="on">
+                  <label class="form-check-label" for="bounceeffect_radio1">On</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="bounceeffect" id="bounceeffect_radio2" value="off">
+                  <label class="form-check-label" for="bounceeffect_radio2">Off</label>
+                </div>
+                <br>
+                <small>Enables a bouncing effect for the Easter Bunny during tracking. Increases CPU & battery usage when enabled.</small>
+              </div>
+              <div class="tab-pane fade show" id="list-reset" role="tabpanel" aria-labelledby="list-reset-list">
+                <div class="lsunavail_warning" style="display: none">
+                  <b>Warning: </b>Local storage is unavailable. Settings will not persist through reloads.<br>
+                  For more information, click <a class="sharelink" data-toggle="modal" data-target="#lsUnavailModal">here</a>.
+                  <hr class="styledhr">
+                </div>
+                <button type="button" class="btn btn-primary btn-block" onclick="$('#olsConfirmModal').modal('show')">Optimize settings for live streaming</button>
+                <small class="btn-block">Configures the tracker to settings optimized for live streaming.</small>
+                <hr class="styledhr">
+                <button type="button" class="btn btn-primary btn-block" onclick="$('#rasConfirmModal').modal('show')">Reset settings to default</button>
+                <small class="btn-block">Resets all tracker settings to default.</small>
+              </div>
+              <div class="tab-pane fade show" id="list-metrics" role="tabpanel" aria-labelledby="list-metrics-list">
+                <div class="lsunavail_warning" style="display: none">
+                  <b>Warning: </b>Local storage is unavailable. Settings will not persist.<br>
+                  For more information, click <a class="sharelink" data-toggle="modal" data-target="#lsUnavailModal">here</a>.
+                  <hr class="styledhr">
+                </div>
+                <h5>Metrics customization</h5>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="metricCustomization" id="metricCustomization_baskets" value="baskets">
+                  <label class="form-check-label" for="metricCustomization_baskets">Baskets delivered</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="metricCustomization" id="metricCustomization_carrots" value="carrots">
+                  <label class="form-check-label" for="metricCustomization_carrots">Carrots eaten</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="metricCustomization" id="metricCustomization_distance" value="distance">
+                  <label class="form-check-label" for="metricCustomization_distance"><span id="dl-settings-span">Distance travelled</span></label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="metricCustomization" id="metricCustomization_speed" value="speed">
+                  <label class="form-check-label" for="metricCustomization_speed">Speed</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="metricCustomization" id="metricCustomization_distancefromyou" value="distancefromyou">
+                  <label class="form-check-label" for="metricCustomization_distancefromyou">Distance from you</label>
+                </div>
+                <br>
+                <small>Changes the metric shown during tracking.</small>
+                <hr class="styledhr">
+                <h5>Show metric in last seen/next stop box</h5>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="mobileMetrics" id="mobileMetrics_on" value="on">
+                  <label class="form-check-label" for="mobileMetrics_on">On</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="mobileMetrics" id="mobileMetrics_off" value="off">
+                  <label class="form-check-label" for="mobileMetrics_off">Off</label>
+                </div>
+                <br>
+                <small><span class="ebarrival_mobilewarning"><b>Note: </b>Enabling this may cause the Easter Bunny icon to be obstructed.<br><br></span>
+                Shows metrics in the last seen & next stop boxes when 1 or 2 boxes are visible.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+  <div class="alert alert-success alert-dismissible fade show fixed-bottom col-md-4 col-md-offset-4 col-8 col-offset-8" role="alert" id="alertbottom_pfmodal" style="margin-bottom: 15px; margin-left: 1em; z-index: 999999; font-family: 'Roboto'; display: none">
+    <span id="alertbottom_pf_message">Your settings have been saved.</span>
+  </div>
+</div>
+
+<div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content top-card">
+      <div class="modal-header">
+        <h5 class="modal-title" id="aboutModalLabel">Welcome to track.easterbunny.cc</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        The <i class="bunny-icon-small" alt="Easter Bunny" title="Easter Bunny" aria-label="Easter Bunny"></i> icon represents the Easter Bunny's current location.<br>
+        The <i class="basket-icon-small" alt="Basket" title="Basket" aria-label="Easter Bunny"></i> icon represents cities that the Easter Bunny has visited. Click on one to learn more about that city! <br>
+        <span id="centerbutton-text">Click on the <i class="center-icon-dyn" id="aboutmodal-ci" alt="Uncenter Easter Bunny" title="Uncenter Easter Bunny" aria-label="Uncenter Easter Bunny" style="height: 18px; width: 18px; bottom: -0.2rem;"></i> button to <span id="center-abouttext">uncenter the map on the Easter Bunny, so you can explore the map.</span><br></span>
+        <span id="center-ios9text" style="display: none"><b>Note: </b>You'll have to use two fingers to move & zoom the map when uncentered. <br></span>
+        Click on the <i alt="Cog" title="Cog" aria-label="Cog" class="material-icons" style="font-size: 16px; bottom: -0.12rem; position: relative">&#xE8B8;</i> button to customize tracker settings.
+        <hr class="styledhr">
+        v5.4.1 · &copy; 2021 track.easterbunny.cc<br>
+        <a href="/faq/" rel="noopener">FAQs</a> · <a href="/news/" rel="noopener">News</a> · <a href="/privacy/" rel="noopener">Privacy</a> · <a href="/acknowledgements/" rel="noopener">Acknowledgements</a> · <a href="/license" rel="noopener">License</a> · <a href="https://gitlab.com/track-easterbunny-cc/tebcc" rel="noopener" target="_blank">Source</a>
+        <br><br>
+        Follow us on Twitter: <a href="https://twitter.com/bunny_tracking" rel="noopener" target="_blank">@bunny_tracking</a><br>
+        Follow the Easter Bunny's journey on Twitter: <a href="https://twitter.com/bunny_updates" rel="noopener" target="_blank">@bunny_updates</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="esdModal" tabindex="-1" role="dialog" aria-labelledby="esdModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content top-card">
+      <div class="modal-header">
+        <h5 class="modal-title" id="esdModalLabel"><span id="flagspan" class="flag-icon flag-icon-gb"></span>&nbsp;&nbsp;<span id="esdHeader"></span></h5>
+        <button type="button" id="esd-stepback" class="btn btn-primary noselect" title="Show information for the previous stop" style="padding-top: 0px; padding-bottom: 0px; padding-left: 8px; padding-right: 8px; margin-left: auto; margin-bottom: 0px; touch-action: manipulation;">
+          <i class="material-icons" id="info-icon" style="line-height: 30px; position: relative">keyboard_arrow_left</i>
+        </button>
+        <button type="button" id="esd-stepforward" class="btn btn-primary noselect" title="Show information for the next stop" style="padding-top: 0px; padding-bottom: 0px; padding-left: 8px; padding-right: 8px; margin-bottom: 0px; touch-action: manipulation;">
+          <i class="material-icons" id="info-icon" style="line-height: 30px; position: relative">keyboard_arrow_right</i>
+        </button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-left: 0px; position: relative; top: 3px">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="padding-top: 12px">
+        <div id="esdArrived-div" title="Local arrival time: ">
+          <b><span id="esd-arrivedtext">Arrived: </span></b><span id="esdArrived"></span>
+        </div>
+        <div id="esdArrivedLocal-div" style="display: none">
+          <b>Arrived (Local time): </b><span id="esdArrived-local"></span>
+        </div>
+        <!-- <button type="button" id="esd-timechange" onclick="esdStopLocal()" class="btn btn-primary noselect" title="Click to show arrival time in local timezone" style="padding-top: 0px; padding-bottom: 0px; padding-left: 8px; padding-right: 8px; margin-left: auto; margin-bottom: 0; touch-action: manipulation; height: 19px; top: -1px">
+          <i class="material-icons" id="info-icon" style="font-size: 18px; line-height: 9.5px; position: relative; top: 3px">access_time</i>
+        </button>
+        <button type="button" id="esd-timechange-local" onclick="esdUserLocal()" class="btn btn-primary noselect" title="Click to show arrival time in your timezone" style="padding-top: 0px; padding-bottom: 0px; padding-left: 8px; padding-right: 8px; margin-left: auto; margin-bottom: 0; touch-action: manipulation; display: none; height: 19px; top: -1px">
+          <i class="material-icons" id="info-icon" style="font-size: 18px; line-height: 9.5px; position: relative; top: 3px">history_toggle_off</i>
+        </button> -->
+        <b>Weather:</b>&nbsp;&nbsp;<i id="esdWeatherIcon" title="" aria-label="" class=""></i>&nbsp;&nbsp;<span id="esdWeather"></span><span id="esdWeather2-wrapper" style="display: none">&nbsp;·&nbsp;<span id="esdWeather2"></span></span><br>
+        <b>Population: </b><span id="esdPopulation"></span><br>
+        <b>Elevation: </b><span id="esdElevation"></span>
+        <!-- <span id="dfy-esd" style="display: none"><br><b>Distance from you: </b><span id="esdDistance"></span></span> -->
+        <hr class="styledhr">
+        <span id="esdDescr"></span>
+        <hr class="styledhr">
+        Source: <a class="linkwrap" id="esdHref" href="" target="_blank"><span id="esdHrefText"></span></a> <br>
+        <!--<small>(licensed under the <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="noopener" target="_blank">CC BY-SA 3.0</a> license)</small><br> -->
+        <small>Weather data powered by <a href="https://darksky.net/poweredby/" rel="noopener" target="_blank">Dark Sky</a></small>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="lsUnavailModal" tabindex="-1" role="dialog" aria-labelledby="lsUnavilModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content top-card">
+      <div class="modal-header">
+        <h5 class="modal-title" id="lsUnavailModalLabel">Local Storage is unavailable</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>track.easterbunny.cc uses your browser's local storage to store tracker settings. When local storage is unavailable, any settings you change will be lost if you refresh the tracker, or quit your browser. <br><br>
+        Quit out of your browser all the way (including force stopping your browser on Android), and load up the tracker again. If you still see the local storage unavailable message, follow these instructions for your browser. <br><br>
+        <div id="ie-lsunavail" style="display: none">
+        To enable local storage in Internet Explorer, select Extras in the menu bar, select Internet Options, select the Advanced tab, go to Security, then uncheck "Enable DOM-Storage". Refresh the tracker.</div>
+        <div id="edge-lsunavail" style="display: none">
+        To enable local storage in Edge, select Settings (three dots on the top right), select Privacy & Security, and make sure Cookies is set to Don't block cookies. Refresh the tracker.</div>
+        <div id="firefox-lsunavail" style="display: none">
+        <b>Note: This only works on the Desktop/Android versions of Firefox. iOS Firefox is not applicable.</b> <br>Type about:config in another browser tab. If a popup shows, click "I accept the risk!". Search for dom.storage.enabled, and set this to True. Refresh the tracker.</div>
+        <div id="chrome-lsunavail" style="display: none">
+        <b>Note: This only works on the Desktop/Android versions of Chrome. iOS Chrome is not applicable.</b> <br>Click the three dots in the top right, then click Settings. Scroll to Privacy & Security on Desktop, Scroll to & click on Site settings on Android. Click on Cookies and other site data on Desktop, Click on Cookies on Android. Make sure Allow all Cookies is selected (Desktop), and Cookies is turned on (Android). <br><br>
+        On Desktop, make sure Clear cookies and site data when you quit Chrome is unselected. On both Android & Desktop, make sure there are no site exceptions for track.easterbunny.cc so that cookies can never be used. Refresh the tracker. 
+       </div>
+        <div id="safari-lsunavail" style="display: none">
+        <b>On Mac:</b> <br>
+        Click Safari in the menu bar, then click Preferences. Click Privacy, then make sure Block all cookies is unchecked. Refresh the tracker. <br><br>
+        <b>On iPhone/iPad:</b> <br>
+        Open the Settings app, then scroll down to Safari & click on it. Scroll down to the Privacy & Security section, and make sure Block all Cookies is turned off. Refresh the tracker.
+        </div>
+        <div id="opera-lsunavail" style="display: none">
+        Type opera://settings/content/cookies in the address bar, then toggle the "Allow sites to save and read cookie data" setting. Refresh the tracker.</div>
+        <div id="unknown-lsunavail" style="display: none">
+          We do not have pre-formatted instructions for your browser. Please search up how to enable local storage for your browser on your preferred search engine.
+        </div>
+        <hr class="styledhr">
+        If you are still having trouble enabling local storage, please contact us for support. You can either tweet us (<a href="https://twitter.com/bunny_tracking" target="_blank" rel="noopener">@bunny_tracking</a>), or email our support address: support (at) easterbunny (dot) cc. <br><br>
+        When requesting support, please provide these details about your browser & OS: <br>
+        <b>Browser: </b><span id="browser-lsunavil">Loading...</span><br>
+        <b>OS: </b><span id="osname-lsunavail">Loading...</span><br>
+        <b>Device Type: </b><span id="devicetype-lsunavail"></span>
+        <span id="macos-warn-lsunavail" style="display: none"><br><b>Note: </b>If you are using an iPad, the OS field may appear as macOS 10.15. If you request support, replace this with the OS that you're running (usually iPadOS 14 or iPadOS 13).</span>
+        <span id="macos11-warn-lsunavail" style="display: none"><br><b>Note: </b>If you are using macOS 11.0 (Big Sur), the OS field may appear as macOS 10.16. If you send request support, replace this with the OS version that you're running (click Apple logo, then About this Mac to see your Version Number).</span>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="geoapiUnavailModal" tabindex="-1" role="dialog" aria-labelledby="geoapiUnavailModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content top-card">
+      <div class="modal-header">
+        <h5 class="modal-title" id="geoapiUnavailModalLabel">Estimated arrival time is unavailable</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>track.easterbunny.cc uses an in-house geolocation (Geo) API to create arrival time estimates for the Easter Bunny without needing to know your precise location. <br><br>
+        The arrival time estimate can become unavailable when you or your network blocks requests to our Geo API, when your IP does not have an approximate location associated, or if you opted out of the MaxMind2 databases that we use. <br><br>
+        Try visiting geoapi.easterbunny.cc to see if you can access the Geo API. If you don't see a landing page, check browser extensions, firewall filters, and on corporate networks check with your IT administrator to see if the Geo API is on a prohibited access list. <br><br>
+        You might have opted your IP out of the GeoLite2 database that we use to create arrival time estimates. Although it is too late to undo opt-out requests for this year, you can click <a href="https://support.maxmind.com/privacy-center/ccpa-do-not-sell/ccpa-do-not-sell-opt-out/" target="_blank" rel="noopener">here</a> to undo the opt out request, and you'll be able to receive an arrival estimate next year. <br><br>
+        Lastly, your IP may not be associated with an approximate location. If you have a cellular device, you can use that to get an approximate arrival time. 
+        <hr class="styledhr">
+        If you are still having trouble getting your estimated time of arrival to work, please contact us for support. You can either tweet us (<a href="https://twitter.com/bunny_tracking" target="_blank" rel="noopener">@bunny_tracking</a>), or email our support address: support (at) easterbunny (dot) cc. <br><br>
+        When requesting support, please provide these details about your browser and OS: <br>
+        <b>Browser: </b><span id="browser-geoapi">Loading...</span><br>
+        <b>OS: </b><span id="osname-geoapi">Loading...</span><br>
+        <b>Device Type: </b><span id="devicetype-geoapi"></span>
+        <span id="macos-warn-geoapi" style="display: none"><br><b>Note: </b>If you are using an iPad, the OS field may appear as macOS 10.15. If you request support, replace this with the OS that you're running (usually iPadOS 14 or iPadOS 13).</span>
+        <span id="macos11-warn-geoapi" style="display: none"><br><b>Note: </b>If you are using macOS 11.0 (Big Sur), the OS field may appear as macOS 10.16. If you send request support, replace this with the OS version that you're running (click Apple logo, then About this Mac to see your Version Number).</span>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="rasConfirmModal" tabindex="-1" role="dialog" aria-labelledby="rasConfirmModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content top-card">
+      <div class="modal-header">
+        <h5 class="modal-title" id="rasConfirmModalLabel">Reset settings to default?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+          This will reset any customized tracker settings back to their defaults, and this action can't be undone. <br><br>
+          If you're okay with this, click the confirm button. Otherwise, click the cancel button.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" onclick="resetAllSettings()">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="olsConfirmModal" tabindex="-1" role="dialog" aria-labelledby="olsConfirmModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content top-card">
+      <div class="modal-header">
+        <h5 class="modal-title" id="olsConfirmModalLabel">Optimize settings for live streaming?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+          We provide a set of settings that we think provide the best experience when watching track.easterbunny.cc on live streams. In short:
+          <ul>
+            <li>The <b>Site appearance</b> is set to <b>Dark</b> and the <b>Map style</b> set to <b>Hybrid</b> for having good visibility and generally being preferred by audiences.</li>
+            <li>The <b>Easter Bunny estimated arrival time</b> is set to <b>Off</b> so your location isn't revealed on stream.</li>
+            <li>The <b>Easter Bunny bouncing effect</b> is set to <b>Off</b> as it can be distracting on stream</li>
+            <li class="ras-chromeline" style="display: none"><b>Fix gray lines on map</b> is set to <b>On</b>, as the gray lines are usually distracting with Hybrid mode enabled.</li>
+          </ul>
+          Otherwise, all tracker settings are set to default, aside from the <b>Tracker Units</b> setting. <br><br>
+          If you're okay with these settings being changed, click the confirm button. Otherwise, click the cancel button.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" onclick="olsSetSettings()">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="preload" style="opacity: 0; width: 0px; height: 0px;">
+  <i class="material-icons">info</i>
+  <i class="material-icons">settings</i>
+  <i class="material-icons">track_changes</i>
+  <i class="material-icons">map</i>
+  <i class="material-icons">show_chart</i>
+  <i class="material-icons">refresh</i>
+  <i class="material-icons">keyboard_arrow_right</i>
+  <i class="material-icons">keyboard_arrow_left</i>
+  <i class="basket-icon-light"></i>
+  <i class="basket-icon-dark"></i>
+  <i class="carrot-icon-light"></i>
+  <i class="carrot-icon-dark"></i>
+</div>
+</body>
+
+<script>
+$("[data-toggle=popover]").popover();
+$('.popover-dismiss').popover({
+  trigger: 'focus'
+})
+
+$(".btn").focus(function() {
+    this.blur();
+  })
+
+  $(".btn").focusin(function() {
+    this.blur();
+  })
+
+  $(".btn").focusout(function() {
+    this.blur();
+  })
+</script>
+</html>
